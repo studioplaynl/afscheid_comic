@@ -66,9 +66,24 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #747bff;videoElement
   }
   button {
     background-color: #f9f9f9;
   }
 }
+
+video {
+  width:80vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+
+body {
+}
+
+
+

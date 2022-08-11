@@ -27,7 +27,7 @@ cursor: pointer;
   }
 
   li {
-
+    list-style: none;
   }
   a {
     cursor: pointer;
@@ -46,7 +46,7 @@ cursor: pointer;
     <div class="menu">
         <nav>
             <li><a>Home</a></li>
-            <li><a>About us</a></li>
+            <li><a>About</a></li>
         </nav>
     </div>
     {/if}
