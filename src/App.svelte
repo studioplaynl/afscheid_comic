@@ -31,7 +31,7 @@ setInterval(()=>{
     console.log("currentScene", currentScene)
 
     if(currentScene == 2 && sceneVideo.currentTime > 4 ) currentCursor = "black"
-    else currentCursor = ""
+          else currentCursor = ""
 },500
 )
 
