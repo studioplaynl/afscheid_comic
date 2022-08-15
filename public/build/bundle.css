@@ -74,11 +74,12 @@ button:focus-visible {
 }
 
 video {
-  width:80vw;
+  width:100vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
+  pointer-events: none;
 }
 
 
@@ -87,4 +88,4 @@ body {
 
 
 
-.video-border.svelte-a4ljt7{display:flex;align-content:center;justify-content:center;align-items:center;height:100vh}.left-button.svelte-a4ljt7{z-index:3;position:fixed;left:1vw;top:48%}.right-button.svelte-a4ljt7{z-index:3;position:fixed;right:1vw;top:48%}.cursor_black_stamp.svelte-a4ljt7{cursor:url(./img/stamp_black.png), auto}.cursor_white_stamp.svelte-a4ljt7{cursor:url(./img/stamp_white.png), auto}video.svelte-ku4dhj{z-index:1}video.svelte-pshpet{z-index:3}video.svelte-bns05s{z-index:2}video.svelte-1v1e9lu{z-index:4}video.svelte-lnfo5z{z-index:5}video.svelte-pd6rbo{z-index:6}.menu-icon.svelte-t912sn{color:black;width:32px;height:32px;margin:15px;position:absolute;right:0px;z-index:5;cursor:pointer}li.svelte-t912sn{list-style:none}a.svelte-t912sn{cursor:pointer;color:black}svg.svelte-c8tyih{stroke:currentColor;fill:currentColor;stroke-width:0;width:100%;height:auto;max-height:100%}
+.video-border.svelte-1ff32pw{display:flex;align-content:center;justify-content:center;align-items:center;height:100vh}.left-button.svelte-1ff32pw{z-index:10;position:fixed;left:1vw;top:48%}.right-button.svelte-1ff32pw{z-index:10;position:fixed;right:1vw;top:48%}.cursor_black_stamp.svelte-1ff32pw{cursor:url(./img/stamp_black.png), auto}.cursor_white_stamp.svelte-1ff32pw{cursor:url(./img/stamp_white.png), auto}.fullscreen-toggle.svelte-1ff32pw{width:40px;height:40px;z-index:10;position:fixed;margin:10px;color:black}.menu-icon.svelte-t912sn{color:black;width:32px;height:32px;margin:15px;position:absolute;right:0px;z-index:5;cursor:pointer}.menu.svelte-t912sn{}li.svelte-t912sn{list-style:none}a.svelte-t912sn{cursor:pointer;color:black}video.svelte-pshpet{z-index:3}video.svelte-bns05s{z-index:2}video.svelte-ku4dhj{z-index:1}video.svelte-1v1e9lu{z-index:4}video.svelte-lnfo5z{z-index:5}video.svelte-pd6rbo{z-index:6}svg.svelte-c8tyih{stroke:currentColor;fill:currentColor;stroke-width:0;width:100%;height:auto;max-height:100%}

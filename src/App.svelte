@@ -7,10 +7,13 @@
  import Scene5 from "./scenes/scene5.svelte";
  import Scene6 from "./scenes/scene6.svelte";
  import { fade, fly } from 'svelte/transition';
- 
-
+ import Fullscreen from "svelte-fullscreen";
+ import MdFullscreen from 'svelte-icons/md/MdFullscreen.svelte'
+ import MdFullscreenExit from 'svelte-icons/md/MdFullscreenExit.svelte'
 let sceneVideo
-
+let fstoggle = false
+let showOnMove = false
+let timer;
 let currentScene = 0
 let currentCursor = ""
 
@@ -25,10 +28,22 @@ const sceneForward = () => {
     console.log(currentScene)
 }
 
+const onMouseMove = () => {
+    showOnMove = true 
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        showOnMove = false 
+    },2000)
+}
+
+
 
 setInterval(()=>{
-    console.log("currentTime",sceneVideo.currentTime)
+    console.log("video ended",sceneVideo)
     console.log("currentScene", currentScene)
+    if(sceneVideo.ended){
+        showOnMove = true
+    }
 
     if(currentScene == 2 && sceneVideo.currentTime > 4 ) currentCursor = "black"
           else currentCursor = ""
@@ -36,40 +51,61 @@ setInterval(()=>{
 )
 
 
-</script>
 
-<main class:cursor_black_stamp={currentCursor === "black"} class:cursor_white_stamp={currentCursor === "white"} >
- <Menu />
+
+</script>
+<main on:mousemove="{onMouseMove}" on:click="{onMouseMove}" class:cursor_black_stamp={currentCursor === "black"} class:cursor_white_stamp={currentCursor === "white"} >
+<Fullscreen let:onRequest let:onExit>
+    <div>
+        {#if showOnMove}
+            <div transition:fade>
+                {#if !fstoggle}
+                <div class="fullscreen-toggle" on:click={() => {onRequest(); fstoggle = true; screen.orientation.lock("landscape");}}><MdFullscreen /></div>
+                {:else}
+                <div class="fullscreen-toggle" on:click={() => {onExit(); fstoggle = false}}><MdFullscreenExit /></div>
+                {/if}
+                <button class="left-button" on:click={sceneBack}>Back</button>
+                <button class="right-button" on:click={sceneForward}>next</button>
+                <Menu />
+            </div>
+        {/if}
+
+
+
  <div class="video-border">
 {#if currentScene == 0}
+        <div >
             <Scene1 bind:videoElement="{sceneVideo}" />
+        </div>
     {:else if currentScene == 1}
-
-        <Scene2 bind:videoElement="{sceneVideo}"/>
+        <div  out:fade="{{duration: 2000 }}" >
+            <Scene2 bind:videoElement="{sceneVideo}"/>
+        </div>
     {:else if currentScene == 2}
-    <div  transition:fade>
-        <Scene3 bind:videoElement="{sceneVideo}" />
-    </div>
+        <div  in:fade="{{duration: 2000 }}" out:fade="{{duration: 3000 }}"  >
+            <Scene3 bind:videoElement="{sceneVideo}" />
+        </div>
     {:else if currentScene == 3}
-    <div transition:fade>
-        <Scene4 bind:videoElement="{sceneVideo}" />
-    </div>
+        <div in:fade="{{duration: 3000 }}" >
+            <Scene4 bind:videoElement="{sceneVideo}" />
+        </div>
 
     {:else if currentScene == 4}
-    <div transition:fade>
-     <Scene5 bind:videoElement="{sceneVideo}" />
-    </div>
+        <div transition:fade>
+            <Scene5 bind:videoElement="{sceneVideo}" />
+        </div>
 
     {:else if currentScene == 5}
-    <Scene6 bind:videoElement="{sceneVideo}" />
+        <div transition:fade>
+            <Scene6 bind:videoElement="{sceneVideo}" />
+        </div>
     {/if}
 </div>
-<button class="left-button" on:click={sceneBack}>Back</button>
-<button class="right-button" on:click={sceneForward}>next</button>
 
 
+</div>
+</Fullscreen>
 </main>
-
 <style>
  
  .video-border {
@@ -81,7 +117,7 @@ setInterval(()=>{
  }
 
  .left-button {
-    z-index: 3;
+    z-index: 10;
     position: fixed;
     left: 1vw;
     top: 48%;
@@ -89,7 +125,7 @@ setInterval(()=>{
  }
 
  .right-button {
-    z-index: 3;
+    z-index: 10;
     position: fixed;
     right: 1vw;
     top: 48%;
@@ -102,5 +138,15 @@ setInterval(()=>{
 .cursor_white_stamp {
   cursor: url(./img/stamp_white.png), auto;
 }
+
+  .fullscreen-toggle {
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    position: fixed;
+    margin: 10px;
+    color: black;
+  }
+
 
 </style>
