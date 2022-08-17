@@ -32,7 +32,7 @@ const onMouseMove = () => {
     showOnMove = true 
     clearTimeout(timer);
     timer = setTimeout(() => {
-        showOnMove = false 
+       showOnMove = false 
     },2000)
 }
 
@@ -64,8 +64,8 @@ setInterval(()=>{
                 {:else}
                 <div class="fullscreen-toggle" on:click={() => {onExit(); fstoggle = false}}><MdFullscreenExit /></div>
                 {/if}
-                <button class="left-button" on:click={sceneBack}>Back</button>
-                <button class="right-button" on:click={sceneForward}>next</button>
+                <a class="left-button" on:click={sceneBack}><img class="icon" src="img/back.png"></a>
+                <a class="right-button" on:click={sceneForward}><img class="icon" src="img/next.png"></a>
                 <Menu />
             </div>
         {/if}
@@ -75,27 +75,32 @@ setInterval(()=>{
  <div class="video-border">
 {#if currentScene == 0}
         <div >
-            <Scene1 bind:videoElement="{sceneVideo}" />
+            <Scene1 bind:videoElement="{sceneVideo}" bind:currentScene="{currentScene}" />
         </div>
-    {:else if currentScene == 1}
-        <div  out:fade="{{duration: 2000 }}" >
-            <Scene2 bind:videoElement="{sceneVideo}"/>
+        {:else if currentScene == 1}
+        <div  out:fly="{{ x: 200, duration: 2000 }}" >
+            <!-- poster scene -->
+            <p>test poster</p>
         </div>
     {:else if currentScene == 2}
-        <div  in:fade="{{duration: 2000 }}" out:fade="{{duration: 3000 }}"  >
-            <Scene3 bind:videoElement="{sceneVideo}" />
+        <div  out:fly="{{ x: 200, duration: 2000 }}" >
+            <Scene2 bind:videoElement="{sceneVideo}" />
         </div>
     {:else if currentScene == 3}
+        <div  in:fly="{{ x: -200, duration: 2000 }}" out:fade="{{duration: 3000 }}"  >
+            <Scene3 bind:videoElement="{sceneVideo}" />
+        </div>
+    {:else if currentScene == 4}
         <div in:fade="{{duration: 3000 }}" >
             <Scene4 bind:videoElement="{sceneVideo}" />
         </div>
 
-    {:else if currentScene == 4}
+    {:else if currentScene == 5}
         <div transition:fade>
             <Scene5 bind:videoElement="{sceneVideo}" />
         </div>
 
-    {:else if currentScene == 5}
+    {:else if currentScene == 6}
         <div transition:fade>
             <Scene6 bind:videoElement="{sceneVideo}" />
         </div>
@@ -121,7 +126,6 @@ setInterval(()=>{
     position: fixed;
     left: 1vw;
     top: 48%;
-
  }
 
  .right-button {
@@ -145,8 +149,16 @@ setInterval(()=>{
     z-index: 10;
     position: fixed;
     margin: 10px;
-    color: black;
+    color: white;
   }
 
+  .icon {
+      width:64px;   
+  }
+
+  .icon:hover {
+      width:75px; 
+      cursor:pointer;  
+  }
 
 </style>

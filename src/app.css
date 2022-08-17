@@ -82,8 +82,19 @@ video {
   pointer-events: none;
 }
 
+@font-face {
+  font-family: 'komika';
+  src: url('../font/komikski-webfont.woff2') format('woff2'),
+       url('../font/komikski-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 body {
+  font-family: 'komika', Arial, sans-serif; 
+  background-color: black;
+  margin: 0;
 }
 
 
