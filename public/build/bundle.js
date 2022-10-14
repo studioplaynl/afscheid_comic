@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35733/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -155,6 +155,12 @@ var app = (function () {
     }
     function detach(node) {
         node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
     }
     function element(name) {
         return document.createElement(name);
@@ -705,6 +711,13 @@ var app = (function () {
     function get_spread_object(spread_props) {
         return typeof spread_props === 'object' && spread_props !== null ? spread_props : {};
     }
+    function each(items, fn) {
+        let str = '';
+        for (let i = 0; i < items.length; i += 1) {
+            str += fn(items[i], i);
+        }
+        return str;
+    }
 
     function bind(component, name, callback) {
         const index = component.$$.props[name];
@@ -884,6 +897,15 @@ var app = (function () {
         dispatch_dev('SvelteDOMSetData', { node: text, data });
         text.data = data;
     }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
@@ -911,9 +933,11 @@ var app = (function () {
         $inject_state() { }
     }
 
+    var videoList = [{type:"video",file:"sc1_sound_1080p_25fps_HQ.mov",transitionIn:{type:"",x:"",duration:""},transitionOut:{type:"",x:"",duration:""}},{type:"poster",file:"poster.png",transitionIn:{type:"",x:"",duration:""},transitionOut:{type:"",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.mov",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}}];
+
     /* node_modules/svelte-icons/components/IconBase.svelte generated by Svelte v3.49.0 */
 
-    const file$d = "node_modules/svelte-icons/components/IconBase.svelte";
+    const file$9 = "node_modules/svelte-icons/components/IconBase.svelte";
 
     // (18:2) {#if title}
     function create_if_block$2(ctx) {
@@ -924,7 +948,7 @@ var app = (function () {
     		c: function create() {
     			title_1 = svg_element("title");
     			t = text(/*title*/ ctx[0]);
-    			add_location(title_1, file$d, 18, 4, 298);
+    			add_location(title_1, file$9, 18, 4, 298);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, title_1, anchor);
@@ -949,7 +973,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$d(ctx) {
+    function create_fragment$9(ctx) {
     	let svg;
     	let if_block_anchor;
     	let current;
@@ -966,7 +990,7 @@ var app = (function () {
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", /*viewBox*/ ctx[1]);
     			attr_dev(svg, "class", "svelte-c8tyih");
-    			add_location(svg, file$d, 16, 0, 229);
+    			add_location(svg, file$9, 16, 0, 229);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1033,7 +1057,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$9.name,
     		type: "component",
     		source: "",
     		ctx
@@ -1042,7 +1066,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$d($$self, $$props, $$invalidate) {
+    function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('IconBase', slots, ['default']);
     	let { title = null } = $$props;
@@ -1076,13 +1100,13 @@ var app = (function () {
     class IconBase extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$d, create_fragment$d, safe_not_equal, { title: 0, viewBox: 1 });
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { title: 0, viewBox: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "IconBase",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$9.name
     		});
 
     		const { ctx } = this.$$;
@@ -1111,7 +1135,7 @@ var app = (function () {
     }
 
     /* node_modules/svelte-icons/md/MdMenu.svelte generated by Svelte v3.49.0 */
-    const file$c = "node_modules/svelte-icons/md/MdMenu.svelte";
+    const file$8 = "node_modules/svelte-icons/md/MdMenu.svelte";
 
     // (4:8) <IconBase viewBox="0 0 24 24" {...$$props}>
     function create_default_slot$4(ctx) {
@@ -1121,7 +1145,7 @@ var app = (function () {
     		c: function create() {
     			path = svg_element("path");
     			attr_dev(path, "d", "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z");
-    			add_location(path, file$c, 4, 10, 151);
+    			add_location(path, file$8, 4, 10, 151);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, path, anchor);
@@ -1143,7 +1167,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$c(ctx) {
+    function create_fragment$8(ctx) {
     	let iconbase;
     	let current;
     	const iconbase_spread_levels = [{ viewBox: "0 0 24 24" }, /*$$props*/ ctx[0]];
@@ -1197,7 +1221,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$c.name,
+    		id: create_fragment$8.name,
     		type: "component",
     		source: "",
     		ctx
@@ -1206,7 +1230,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$c($$self, $$props, $$invalidate) {
+    function instance$8($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('MdMenu', slots, []);
 
@@ -1231,19 +1255,19 @@ var app = (function () {
     class MdMenu extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "MdMenu",
     			options,
-    			id: create_fragment$c.name
+    			id: create_fragment$8.name
     		});
     	}
     }
 
     /* node_modules/svelte-icons/md/MdClose.svelte generated by Svelte v3.49.0 */
-    const file$b = "node_modules/svelte-icons/md/MdClose.svelte";
+    const file$7 = "node_modules/svelte-icons/md/MdClose.svelte";
 
     // (4:8) <IconBase viewBox="0 0 24 24" {...$$props}>
     function create_default_slot$3(ctx) {
@@ -1253,7 +1277,7 @@ var app = (function () {
     		c: function create() {
     			path = svg_element("path");
     			attr_dev(path, "d", "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z");
-    			add_location(path, file$b, 4, 10, 151);
+    			add_location(path, file$7, 4, 10, 151);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, path, anchor);
@@ -1275,7 +1299,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$b(ctx) {
+    function create_fragment$7(ctx) {
     	let iconbase;
     	let current;
     	const iconbase_spread_levels = [{ viewBox: "0 0 24 24" }, /*$$props*/ ctx[0]];
@@ -1329,7 +1353,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$b.name,
+    		id: create_fragment$7.name,
     		type: "component",
     		source: "",
     		ctx
@@ -1338,7 +1362,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$b($$self, $$props, $$invalidate) {
+    function instance$7($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('MdClose', slots, []);
 
@@ -1363,19 +1387,19 @@ var app = (function () {
     class MdClose extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "MdClose",
     			options,
-    			id: create_fragment$b.name
+    			id: create_fragment$7.name
     		});
     	}
     }
 
     /* src/components/menu.svelte generated by Svelte v3.49.0 */
-    const file$a = "src/components/menu.svelte";
+    const file$6 = "src/components/menu.svelte";
 
     // (50:4) {:else}
     function create_else_block$1(ctx) {
@@ -1387,7 +1411,7 @@ var app = (function () {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = "img/menuShoe.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "class", "svelte-1f088bq");
-    			add_location(img, file$a, 50, 8, 729);
+    			add_location(img, file$6, 50, 8, 729);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1471,16 +1495,16 @@ var app = (function () {
     			a1 = element("a");
     			a1.textContent = "About";
     			attr_dev(a0, "class", "svelte-1f088bq");
-    			add_location(a0, file$a, 56, 16, 841);
+    			add_location(a0, file$6, 56, 16, 841);
     			attr_dev(li0, "class", "svelte-1f088bq");
-    			add_location(li0, file$a, 56, 12, 837);
+    			add_location(li0, file$6, 56, 12, 837);
     			attr_dev(a1, "class", "svelte-1f088bq");
-    			add_location(a1, file$a, 57, 16, 874);
+    			add_location(a1, file$6, 57, 16, 874);
     			attr_dev(li1, "class", "svelte-1f088bq");
-    			add_location(li1, file$a, 57, 12, 870);
-    			add_location(nav, file$a, 55, 8, 819);
+    			add_location(li1, file$6, 57, 12, 870);
+    			add_location(nav, file$6, 55, 8, 819);
     			attr_dev(div, "class", "menu svelte-1f088bq");
-    			add_location(div, file$a, 54, 4, 792);
+    			add_location(div, file$6, 54, 4, 792);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1507,7 +1531,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$a(ctx) {
+    function create_fragment$6(ctx) {
     	let div;
     	let current_block_type_index;
     	let if_block0;
@@ -1534,7 +1558,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "menu-icon svelte-1f088bq");
-    			add_location(div, file$a, 46, 0, 624);
+    			add_location(div, file$6, 46, 0, 624);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1605,7 +1629,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$a.name,
+    		id: create_fragment$6.name,
     		type: "component",
     		source: "",
     		ctx
@@ -1614,7 +1638,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$a($$self, $$props, $$invalidate) {
+    function instance$6($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Menu', slots, []);
     	let menuOpen = false;
@@ -1646,742 +1670,14 @@ var app = (function () {
     class Menu extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {});
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Menu",
     			options,
-    			id: create_fragment$a.name
-    		});
-    	}
-    }
-
-    /* src/scenes/scene1.svelte generated by Svelte v3.49.0 */
-
-    const file$9 = "src/scenes/scene1.svelte";
-
-    function create_fragment$9(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t0;
-    	let t1;
-    	let div;
-    	let img;
-    	let img_src_value;
-    	let mounted;
-    	let dispose;
-
-    	const block = {
-    		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t0 = text("\n  Your browser does not support the video tag.");
-    			t1 = space();
-    			div = element("div");
-    			img = element("img");
-    			if (!src_url_equal(source.src, source_src_value = "/video/Scene01.m4v")) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$9, 7, 4, 137);
-    			attr_dev(video, "class", "Scene01 svelte-1l4h7n5");
-    			video.autoplay = true;
-    			add_location(video, file$9, 6, 0, 73);
-    			attr_dev(img, "class", "skip svelte-1l4h7n5");
-    			if (!src_url_equal(img.src, img_src_value = "img/skipIntro.png")) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$9, 11, 7, 255);
-    			add_location(div, file$9, 11, 2, 250);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t0);
-    			/*video_binding*/ ctx[2](video);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, div, anchor);
-    			append_dev(div, img);
-
-    			if (!mounted) {
-    				dispose = listen_dev(img, "click", /*click_handler*/ ctx[3], false, false, false);
-    				mounted = true;
-    			}
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[2](null);
-    			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div);
-    			mounted = false;
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$9.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$9($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Scene1', slots, []);
-    	let { videoElement } = $$props;
-    	let { currentScene } = $$props;
-    	const writable_props = ['videoElement', 'currentScene'];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Scene1> was created with unknown prop '${key}'`);
-    	});
-
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
-    	const click_handler = () => {
-    		$$invalidate(1, currentScene = 1);
-    	};
-
-    	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    		if ('currentScene' in $$props) $$invalidate(1, currentScene = $$props.currentScene);
-    	};
-
-    	$$self.$capture_state = () => ({ videoElement, currentScene });
-
-    	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    		if ('currentScene' in $$props) $$invalidate(1, currentScene = $$props.currentScene);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [videoElement, currentScene, video_binding, click_handler];
-    }
-
-    class Scene1 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { videoElement: 0, currentScene: 1 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Scene1",
-    			options,
-    			id: create_fragment$9.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<Scene1> was created without expected prop 'videoElement'");
-    		}
-
-    		if (/*currentScene*/ ctx[1] === undefined && !('currentScene' in props)) {
-    			console.warn("<Scene1> was created without expected prop 'currentScene'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<Scene1>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<Scene1>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get currentScene() {
-    		throw new Error("<Scene1>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set currentScene(value) {
-    		throw new Error("<Scene1>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
-    /* src/scenes/scene2.svelte generated by Svelte v3.49.0 */
-
-    const file$8 = "src/scenes/scene2.svelte";
-
-    function create_fragment$8(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/Scene02.m4v")) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$8, 7, 4, 114);
-    			attr_dev(video, "class", "Scene02 svelte-bns05s");
-    			video.autoplay = true;
-    			add_location(video, file$8, 6, 0, 50);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t);
-    			/*video_binding*/ ctx[1](video);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[1](null);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$8.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$8($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Scene2', slots, []);
-    	let { videoElement } = $$props;
-    	const writable_props = ['videoElement'];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Scene2> was created with unknown prop '${key}'`);
-    	});
-
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
-    	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	$$self.$capture_state = () => ({ videoElement });
-
-    	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [videoElement, video_binding];
-    }
-
-    class Scene2 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$8, create_fragment$8, safe_not_equal, { videoElement: 0 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Scene2",
-    			options,
-    			id: create_fragment$8.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<Scene2> was created without expected prop 'videoElement'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<Scene2>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<Scene2>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
-    /* src/scenes/scene3.svelte generated by Svelte v3.49.0 */
-
-    const file$7 = "src/scenes/scene3.svelte";
-
-    function create_fragment$7(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/Scene03.m4v")) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$7, 7, 4, 112);
-    			attr_dev(video, "class", "Scene03 svelte-pshpet");
-    			video.autoplay = true;
-    			add_location(video, file$7, 6, 0, 48);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t);
-    			/*video_binding*/ ctx[1](video);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[1](null);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$7.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$7($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Scene3', slots, []);
-    	let { videoElement } = $$props;
-    	const writable_props = ['videoElement'];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Scene3> was created with unknown prop '${key}'`);
-    	});
-
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
-    	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	$$self.$capture_state = () => ({ videoElement });
-
-    	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [videoElement, video_binding];
-    }
-
-    class Scene3 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$7, create_fragment$7, safe_not_equal, { videoElement: 0 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Scene3",
-    			options,
-    			id: create_fragment$7.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<Scene3> was created without expected prop 'videoElement'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<Scene3>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<Scene3>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
-    /* src/scenes/scene4.svelte generated by Svelte v3.49.0 */
-
-    const file$6 = "src/scenes/scene4.svelte";
-
-    function create_fragment$6(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/Scene04.m4v")) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$6, 7, 4, 112);
-    			attr_dev(video, "class", "Scene04 svelte-1v1e9lu");
-    			video.autoplay = true;
-    			add_location(video, file$6, 6, 0, 48);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t);
-    			/*video_binding*/ ctx[1](video);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[1](null);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$6.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$6($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Scene4', slots, []);
-    	let { videoElement } = $$props;
-    	const writable_props = ['videoElement'];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Scene4> was created with unknown prop '${key}'`);
-    	});
-
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
-    	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	$$self.$capture_state = () => ({ videoElement });
-
-    	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [videoElement, video_binding];
-    }
-
-    class Scene4 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$6, create_fragment$6, safe_not_equal, { videoElement: 0 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Scene4",
-    			options,
     			id: create_fragment$6.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<Scene4> was created without expected prop 'videoElement'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<Scene4>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<Scene4>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
-    /* src/scenes/scene5.svelte generated by Svelte v3.49.0 */
-
-    const file$5 = "src/scenes/scene5.svelte";
-
-    function create_fragment$5(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/Scene05.m4v")) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$5, 7, 4, 113);
-    			attr_dev(video, "class", "Scene05 svelte-lnfo5z");
-    			video.autoplay = true;
-    			add_location(video, file$5, 6, 0, 48);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t);
-    			/*video_binding*/ ctx[1](video);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[1](null);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$5.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$5($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Scene5', slots, []);
-    	let { videoElement } = $$props;
-    	const writable_props = ['videoElement'];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Scene5> was created with unknown prop '${key}'`);
-    	});
-
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
-    	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	$$self.$capture_state = () => ({ videoElement });
-
-    	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [videoElement, video_binding];
-    }
-
-    class Scene5 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { videoElement: 0 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Scene5",
-    			options,
-    			id: create_fragment$5.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<Scene5> was created without expected prop 'videoElement'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<Scene5>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<Scene5>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
-    /* src/scenes/scene6.svelte generated by Svelte v3.49.0 */
-
-    const file$4 = "src/scenes/scene6.svelte";
-
-    function create_fragment$4(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/Scene06.m4v")) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$4, 7, 4, 112);
-    			attr_dev(video, "class", "Scene06 svelte-pd6rbo");
-    			video.autoplay = true;
-    			add_location(video, file$4, 6, 0, 48);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t);
-    			/*video_binding*/ ctx[1](video);
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[1](null);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$4.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$4($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Scene6', slots, []);
-    	let { videoElement } = $$props;
-    	const writable_props = ['videoElement'];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Scene6> was created with unknown prop '${key}'`);
-    	});
-
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
-    	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	$$self.$capture_state = () => ({ videoElement });
-
-    	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [videoElement, video_binding];
-    }
-
-    class Scene6 extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { videoElement: 0 });
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Scene6",
-    			options,
-    			id: create_fragment$4.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<Scene6> was created without expected prop 'videoElement'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<Scene6>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<Scene6>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -2412,6 +1708,370 @@ var app = (function () {
 			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
 			opacity: ${target_opacity - (od * u)}`
         };
+    }
+
+    /* src/scenes/sceneVideo.svelte generated by Svelte v3.49.0 */
+
+    const file$5 = "src/scenes/sceneVideo.svelte";
+
+    function create_fragment$5(ctx) {
+    	let video;
+    	let source;
+    	let source_src_value;
+    	let t;
+    	let video_updating = false;
+    	let video_animationframe;
+    	let mounted;
+    	let dispose;
+
+    	function video_timeupdate_handler() {
+    		cancelAnimationFrame(video_animationframe);
+
+    		if (!video.paused) {
+    			video_animationframe = raf(video_timeupdate_handler);
+    			video_updating = true;
+    		}
+
+    		/*video_timeupdate_handler*/ ctx[4].call(video);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			video = element("video");
+    			source = element("source");
+    			t = text("\n  Your browser does not support the video tag.");
+    			if (!src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[2].file)) attr_dev(source, "src", source_src_value);
+    			attr_dev(source, "type", "video/mp4");
+    			add_location(source, file$5, 10, 4, 190);
+    			attr_dev(video, "class", "Scene svelte-bns05s");
+    			attr_dev(video, "id", /*id*/ ctx[3]);
+    			video.autoplay = true;
+    			if (/*ended*/ ctx[1] === void 0 || /*currentTime*/ ctx[0] === void 0) add_render_callback(video_timeupdate_handler);
+    			if (/*ended*/ ctx[1] === void 0) add_render_callback(() => /*video_ended_handler*/ ctx[5].call(video));
+    			add_location(video, file$5, 9, 0, 103);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, video, anchor);
+    			append_dev(video, source);
+    			append_dev(video, t);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(video, "timeupdate", video_timeupdate_handler),
+    					listen_dev(video, "ended", /*video_ended_handler*/ ctx[5])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*scene*/ 4 && !src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[2].file)) {
+    				attr_dev(source, "src", source_src_value);
+    			}
+
+    			if (dirty & /*id*/ 8) {
+    				attr_dev(video, "id", /*id*/ ctx[3]);
+    			}
+
+    			if (!video_updating && dirty & /*currentTime*/ 1 && !isNaN(/*currentTime*/ ctx[0])) {
+    				video.currentTime = /*currentTime*/ ctx[0];
+    			}
+
+    			video_updating = false;
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(video);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$5.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('SceneVideo', slots, []);
+    	let { currentTime } = $$props;
+    	let { scene } = $$props;
+    	let { id } = $$props;
+    	let { ended } = $$props;
+    	const writable_props = ['currentTime', 'scene', 'id', 'ended'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SceneVideo> was created with unknown prop '${key}'`);
+    	});
+
+    	function video_timeupdate_handler() {
+    		ended = this.ended;
+    		currentTime = this.currentTime;
+    		$$invalidate(1, ended);
+    		$$invalidate(0, currentTime);
+    	}
+
+    	function video_ended_handler() {
+    		ended = this.ended;
+    		$$invalidate(1, ended);
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ('currentTime' in $$props) $$invalidate(0, currentTime = $$props.currentTime);
+    		if ('scene' in $$props) $$invalidate(2, scene = $$props.scene);
+    		if ('id' in $$props) $$invalidate(3, id = $$props.id);
+    		if ('ended' in $$props) $$invalidate(1, ended = $$props.ended);
+    	};
+
+    	$$self.$capture_state = () => ({ currentTime, scene, id, ended });
+
+    	$$self.$inject_state = $$props => {
+    		if ('currentTime' in $$props) $$invalidate(0, currentTime = $$props.currentTime);
+    		if ('scene' in $$props) $$invalidate(2, scene = $$props.scene);
+    		if ('id' in $$props) $$invalidate(3, id = $$props.id);
+    		if ('ended' in $$props) $$invalidate(1, ended = $$props.ended);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [currentTime, ended, scene, id, video_timeupdate_handler, video_ended_handler];
+    }
+
+    class SceneVideo extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+    			currentTime: 0,
+    			scene: 2,
+    			id: 3,
+    			ended: 1
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "SceneVideo",
+    			options,
+    			id: create_fragment$5.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*currentTime*/ ctx[0] === undefined && !('currentTime' in props)) {
+    			console.warn("<SceneVideo> was created without expected prop 'currentTime'");
+    		}
+
+    		if (/*scene*/ ctx[2] === undefined && !('scene' in props)) {
+    			console.warn("<SceneVideo> was created without expected prop 'scene'");
+    		}
+
+    		if (/*id*/ ctx[3] === undefined && !('id' in props)) {
+    			console.warn("<SceneVideo> was created without expected prop 'id'");
+    		}
+
+    		if (/*ended*/ ctx[1] === undefined && !('ended' in props)) {
+    			console.warn("<SceneVideo> was created without expected prop 'ended'");
+    		}
+    	}
+
+    	get currentTime() {
+    		throw new Error("<SceneVideo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set currentTime(value) {
+    		throw new Error("<SceneVideo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get scene() {
+    		throw new Error("<SceneVideo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set scene(value) {
+    		throw new Error("<SceneVideo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get id() {
+    		throw new Error("<SceneVideo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set id(value) {
+    		throw new Error("<SceneVideo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get ended() {
+    		throw new Error("<SceneVideo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set ended(value) {
+    		throw new Error("<SceneVideo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/scenes/scenePoster.svelte generated by Svelte v3.49.0 */
+
+    const file$4 = "src/scenes/scenePoster.svelte";
+
+    function create_fragment$4(ctx) {
+    	let video;
+    	let source;
+    	let source_src_value;
+    	let t;
+    	let video_class_value;
+
+    	const block = {
+    		c: function create() {
+    			video = element("video");
+    			source = element("source");
+    			t = text("\n  Your browser does not support the video tag.");
+    			if (!src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[1].file)) attr_dev(source, "src", source_src_value);
+    			attr_dev(source, "type", "video/mp4");
+    			add_location(source, file$4, 9, 4, 151);
+    			attr_dev(video, "class", video_class_value = "Scene" + /*id*/ ctx[2] + " svelte-bns05s");
+    			video.autoplay = true;
+    			add_location(video, file$4, 8, 0, 85);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, video, anchor);
+    			append_dev(video, source);
+    			append_dev(video, t);
+    			/*video_binding*/ ctx[3](video);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*scene*/ 2 && !src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[1].file)) {
+    				attr_dev(source, "src", source_src_value);
+    			}
+
+    			if (dirty & /*id*/ 4 && video_class_value !== (video_class_value = "Scene" + /*id*/ ctx[2] + " svelte-bns05s")) {
+    				attr_dev(video, "class", video_class_value);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(video);
+    			/*video_binding*/ ctx[3](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('ScenePoster', slots, []);
+    	let { videoElement } = $$props;
+    	let { scene } = $$props;
+    	let { id } = $$props;
+    	const writable_props = ['videoElement', 'scene', 'id'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<ScenePoster> was created with unknown prop '${key}'`);
+    	});
+
+    	function video_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			videoElement = $$value;
+    			$$invalidate(0, videoElement);
+    		});
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
+    		if ('scene' in $$props) $$invalidate(1, scene = $$props.scene);
+    		if ('id' in $$props) $$invalidate(2, id = $$props.id);
+    	};
+
+    	$$self.$capture_state = () => ({ videoElement, scene, id });
+
+    	$$self.$inject_state = $$props => {
+    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
+    		if ('scene' in $$props) $$invalidate(1, scene = $$props.scene);
+    		if ('id' in $$props) $$invalidate(2, id = $$props.id);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [videoElement, scene, id, video_binding];
+    }
+
+    class ScenePoster extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { videoElement: 0, scene: 1, id: 2 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "ScenePoster",
+    			options,
+    			id: create_fragment$4.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
+    			console.warn("<ScenePoster> was created without expected prop 'videoElement'");
+    		}
+
+    		if (/*scene*/ ctx[1] === undefined && !('scene' in props)) {
+    			console.warn("<ScenePoster> was created without expected prop 'scene'");
+    		}
+
+    		if (/*id*/ ctx[2] === undefined && !('id' in props)) {
+    			console.warn("<ScenePoster> was created without expected prop 'id'");
+    		}
+    	}
+
+    	get videoElement() {
+    		throw new Error("<ScenePoster>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set videoElement(value) {
+    		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get scene() {
+    		throw new Error("<ScenePoster>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set scene(value) {
+    		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get id() {
+    		throw new Error("<ScenePoster>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set id(value) {
+    		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     var screenfull$1 = {exports: {}};
@@ -3050,8 +2710,16 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src/App.svelte";
 
-    // (60:8) {#if showOnMove}
-    function create_if_block_7(ctx) {
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[21] = list[i];
+    	child_ctx[22] = list;
+    	child_ctx[23] = i;
+    	return child_ctx;
+    }
+
+    // (109:6) {#if showOnMove}
+    function create_if_block_3(ctx) {
     	let div;
     	let current_block_type_index;
     	let if_block;
@@ -3069,11 +2737,11 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block_8, create_else_block];
+    	const if_block_creators = [create_if_block_4, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (!/*fstoggle*/ ctx[1]) return 0;
+    		if (!/*fstoggle*/ ctx[5]) return 0;
     		return 1;
     	}
 
@@ -3093,17 +2761,17 @@ var app = (function () {
     			img1 = element("img");
     			t2 = space();
     			create_component(menu.$$.fragment);
-    			attr_dev(img0, "class", "icon svelte-sfg9kw");
+    			attr_dev(img0, "class", "icon svelte-y5zlyi");
     			if (!src_url_equal(img0.src, img0_src_value = "img/back.png")) attr_dev(img0, "src", img0_src_value);
-    			add_location(img0, file, 66, 60, 2045);
-    			attr_dev(a0, "class", "left-button svelte-sfg9kw");
-    			add_location(a0, file, 66, 16, 2001);
-    			attr_dev(img1, "class", "icon svelte-sfg9kw");
+    			add_location(img0, file, 133, 13, 3952);
+    			attr_dev(a0, "class", "left-button svelte-y5zlyi");
+    			add_location(a0, file, 132, 10, 3895);
+    			attr_dev(img1, "class", "icon svelte-y5zlyi");
     			if (!src_url_equal(img1.src, img1_src_value = "img/next.png")) attr_dev(img1, "src", img1_src_value);
-    			add_location(img1, file, 67, 64, 2151);
-    			attr_dev(a1, "class", "right-button svelte-sfg9kw");
-    			add_location(a1, file, 67, 16, 2103);
-    			add_location(div, file, 60, 12, 1608);
+    			add_location(img1, file, 136, 13, 4078);
+    			attr_dev(a1, "class", "right-button svelte-y5zlyi");
+    			add_location(a1, file, 135, 10, 4017);
+    			add_location(div, file, 109, 8, 3283);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3120,8 +2788,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(a0, "click", /*sceneBack*/ ctx[5], false, false, false),
-    					listen_dev(a1, "click", /*sceneForward*/ ctx[6], false, false, false)
+    					listen_dev(a0, "click", /*sceneBack*/ ctx[8], false, false, false),
+    					listen_dev(a1, "click", /*sceneForward*/ ctx[9], false, false, false)
     				];
 
     				mounted = true;
@@ -3185,16 +2853,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7.name,
+    		id: create_if_block_3.name,
     		type: "if",
-    		source: "(60:8) {#if showOnMove}",
+    		source: "(109:6) {#if showOnMove}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:16) {:else}
+    // (122:10) {:else}
     function create_else_block(ctx) {
     	let div;
     	let mdfullscreenexit;
@@ -3204,15 +2872,15 @@ var app = (function () {
     	mdfullscreenexit = new MdFullscreenExit({ $$inline: true });
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[9](/*onExit*/ ctx[19]);
+    		return /*click_handler_1*/ ctx[12](/*onExit*/ ctx[20]);
     	}
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			create_component(mdfullscreenexit.$$.fragment);
-    			attr_dev(div, "class", "fullscreen-toggle svelte-sfg9kw");
-    			add_location(div, file, 64, 16, 1859);
+    			attr_dev(div, "class", "fullscreen-toggle svelte-y5zlyi");
+    			add_location(div, file, 122, 12, 3647);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3248,15 +2916,15 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(64:16) {:else}",
+    		source: "(122:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:16) {#if !fstoggle}
-    function create_if_block_8(ctx) {
+    // (111:10) {#if !fstoggle}
+    function create_if_block_4(ctx) {
     	let div;
     	let mdfullscreen;
     	let current;
@@ -3265,15 +2933,15 @@ var app = (function () {
     	mdfullscreen = new MdFullscreen({ $$inline: true });
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[8](/*onRequest*/ ctx[18]);
+    		return /*click_handler*/ ctx[11](/*onRequest*/ ctx[19]);
     	}
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			create_component(mdfullscreen.$$.fragment);
-    			attr_dev(div, "class", "fullscreen-toggle svelte-sfg9kw");
-    			add_location(div, file, 62, 16, 1678);
+    			attr_dev(div, "class", "fullscreen-toggle svelte-y5zlyi");
+    			add_location(div, file, 111, 12, 3343);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3307,604 +2975,56 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_8.name,
-    		type: "if",
-    		source: "(62:16) {#if !fstoggle}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (103:32) 
-    function create_if_block_6(ctx) {
-    	let div;
-    	let scene6;
-    	let updating_videoElement;
-    	let div_transition;
-    	let current;
-
-    	function scene6_videoElement_binding(value) {
-    		/*scene6_videoElement_binding*/ ctx[16](value);
-    	}
-
-    	let scene6_props = {};
-
-    	if (/*sceneVideo*/ ctx[0] !== void 0) {
-    		scene6_props.videoElement = /*sceneVideo*/ ctx[0];
-    	}
-
-    	scene6 = new Scene6({ props: scene6_props, $$inline: true });
-    	binding_callbacks.push(() => bind(scene6, 'videoElement', scene6_videoElement_binding));
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(scene6.$$.fragment);
-    			add_location(div, file, 103, 8, 3275);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(scene6, div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const scene6_changes = {};
-
-    			if (!updating_videoElement && dirty & /*sceneVideo*/ 1) {
-    				updating_videoElement = true;
-    				scene6_changes.videoElement = /*sceneVideo*/ ctx[0];
-    				add_flush_callback(() => updating_videoElement = false);
-    			}
-
-    			scene6.$set(scene6_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(scene6.$$.fragment, local);
-
-    			add_render_callback(() => {
-    				if (!div_transition) div_transition = create_bidirectional_transition(div, fade, {}, true);
-    				div_transition.run(1);
-    			});
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(scene6.$$.fragment, local);
-    			if (!div_transition) div_transition = create_bidirectional_transition(div, fade, {}, false);
-    			div_transition.run(0);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(scene6);
-    			if (detaching && div_transition) div_transition.end();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_6.name,
-    		type: "if",
-    		source: "(103:32) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (98:32) 
-    function create_if_block_5(ctx) {
-    	let div;
-    	let scene5;
-    	let updating_videoElement;
-    	let div_transition;
-    	let current;
-
-    	function scene5_videoElement_binding(value) {
-    		/*scene5_videoElement_binding*/ ctx[15](value);
-    	}
-
-    	let scene5_props = {};
-
-    	if (/*sceneVideo*/ ctx[0] !== void 0) {
-    		scene5_props.videoElement = /*sceneVideo*/ ctx[0];
-    	}
-
-    	scene5 = new Scene5({ props: scene5_props, $$inline: true });
-    	binding_callbacks.push(() => bind(scene5, 'videoElement', scene5_videoElement_binding));
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(scene5.$$.fragment);
-    			add_location(div, file, 98, 8, 3140);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(scene5, div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const scene5_changes = {};
-
-    			if (!updating_videoElement && dirty & /*sceneVideo*/ 1) {
-    				updating_videoElement = true;
-    				scene5_changes.videoElement = /*sceneVideo*/ ctx[0];
-    				add_flush_callback(() => updating_videoElement = false);
-    			}
-
-    			scene5.$set(scene5_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(scene5.$$.fragment, local);
-
-    			add_render_callback(() => {
-    				if (!div_transition) div_transition = create_bidirectional_transition(div, fade, {}, true);
-    				div_transition.run(1);
-    			});
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(scene5.$$.fragment, local);
-    			if (!div_transition) div_transition = create_bidirectional_transition(div, fade, {}, false);
-    			div_transition.run(0);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(scene5);
-    			if (detaching && div_transition) div_transition.end();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_5.name,
-    		type: "if",
-    		source: "(98:32) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (93:32) 
-    function create_if_block_4(ctx) {
-    	let div;
-    	let scene4;
-    	let updating_videoElement;
-    	let div_intro;
-    	let current;
-
-    	function scene4_videoElement_binding(value) {
-    		/*scene4_videoElement_binding*/ ctx[14](value);
-    	}
-
-    	let scene4_props = {};
-
-    	if (/*sceneVideo*/ ctx[0] !== void 0) {
-    		scene4_props.videoElement = /*sceneVideo*/ ctx[0];
-    	}
-
-    	scene4 = new Scene4({ props: scene4_props, $$inline: true });
-    	binding_callbacks.push(() => bind(scene4, 'videoElement', scene4_videoElement_binding));
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(scene4.$$.fragment);
-    			add_location(div, file, 93, 8, 2990);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(scene4, div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const scene4_changes = {};
-
-    			if (!updating_videoElement && dirty & /*sceneVideo*/ 1) {
-    				updating_videoElement = true;
-    				scene4_changes.videoElement = /*sceneVideo*/ ctx[0];
-    				add_flush_callback(() => updating_videoElement = false);
-    			}
-
-    			scene4.$set(scene4_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(scene4.$$.fragment, local);
-
-    			if (!div_intro) {
-    				add_render_callback(() => {
-    					div_intro = create_in_transition(div, fade, { duration: 3000 });
-    					div_intro.start();
-    				});
-    			}
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(scene4.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(scene4);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(93:32) ",
+    		source: "(111:10) {#if !fstoggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:32) 
-    function create_if_block_3(ctx) {
+    // (145:10) {#if currentScene === sceneNumber}
+    function create_if_block(ctx) {
     	let div;
-    	let scene3;
-    	let updating_videoElement;
+    	let t0;
+    	let t1;
     	let div_intro;
     	let div_outro;
     	let current;
-
-    	function scene3_videoElement_binding(value) {
-    		/*scene3_videoElement_binding*/ ctx[13](value);
-    	}
-
-    	let scene3_props = {};
-
-    	if (/*sceneVideo*/ ctx[0] !== void 0) {
-    		scene3_props.videoElement = /*sceneVideo*/ ctx[0];
-    	}
-
-    	scene3 = new Scene3({ props: scene3_props, $$inline: true });
-    	binding_callbacks.push(() => bind(scene3, 'videoElement', scene3_videoElement_binding));
+    	let if_block0 = /*scene*/ ctx[21].type == "video" && create_if_block_2(ctx);
+    	let if_block1 = /*scene*/ ctx[21].type == "poster" && create_if_block_1(ctx);
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			create_component(scene3.$$.fragment);
-    			add_location(div, file, 89, 8, 2799);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(scene3, div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const scene3_changes = {};
-
-    			if (!updating_videoElement && dirty & /*sceneVideo*/ 1) {
-    				updating_videoElement = true;
-    				scene3_changes.videoElement = /*sceneVideo*/ ctx[0];
-    				add_flush_callback(() => updating_videoElement = false);
-    			}
-
-    			scene3.$set(scene3_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(scene3.$$.fragment, local);
-
-    			add_render_callback(() => {
-    				if (div_outro) div_outro.end(1);
-    				div_intro = create_in_transition(div, fly, { x: -200, duration: 2000 });
-    				div_intro.start();
-    			});
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(scene3.$$.fragment, local);
-    			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, fade, { duration: 3000 });
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(scene3);
-    			if (detaching && div_outro) div_outro.end();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_3.name,
-    		type: "if",
-    		source: "(89:32) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (85:32) 
-    function create_if_block_2(ctx) {
-    	let div;
-    	let scene2;
-    	let updating_videoElement;
-    	let div_outro;
-    	let current;
-
-    	function scene2_videoElement_binding(value) {
-    		/*scene2_videoElement_binding*/ ctx[12](value);
-    	}
-
-    	let scene2_props = {};
-
-    	if (/*sceneVideo*/ ctx[0] !== void 0) {
-    		scene2_props.videoElement = /*sceneVideo*/ ctx[0];
-    	}
-
-    	scene2 = new Scene2({ props: scene2_props, $$inline: true });
-    	binding_callbacks.push(() => bind(scene2, 'videoElement', scene2_videoElement_binding));
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(scene2.$$.fragment);
-    			add_location(div, file, 85, 8, 2640);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(scene2, div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const scene2_changes = {};
-
-    			if (!updating_videoElement && dirty & /*sceneVideo*/ 1) {
-    				updating_videoElement = true;
-    				scene2_changes.videoElement = /*sceneVideo*/ ctx[0];
-    				add_flush_callback(() => updating_videoElement = false);
-    			}
-
-    			scene2.$set(scene2_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(scene2.$$.fragment, local);
-    			if (div_outro) div_outro.end(1);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(scene2.$$.fragment, local);
-    			div_outro = create_out_transition(div, fly, { x: 200, duration: 2000 });
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(scene2);
-    			if (detaching && div_outro) div_outro.end();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_2.name,
-    		type: "if",
-    		source: "(85:32) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (80:36) 
-    function create_if_block_1(ctx) {
-    	let div;
-    	let p;
-    	let div_outro;
-    	let current;
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			p = element("p");
-    			p.textContent = "test poster";
-    			add_location(p, file, 82, 12, 2565);
-    			add_location(div, file, 80, 8, 2472);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, p);
-    			current = true;
-    		},
-    		p: noop,
-    		i: function intro(local) {
-    			if (current) return;
-    			if (div_outro) div_outro.end(1);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			div_outro = create_out_transition(div, fly, { x: 200, duration: 2000 });
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			if (detaching && div_outro) div_outro.end();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_1.name,
-    		type: "if",
-    		source: "(80:36) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (76:0) {#if currentScene == 0}
-    function create_if_block(ctx) {
-    	let div;
-    	let scene1;
-    	let updating_videoElement;
-    	let updating_currentScene;
-    	let current;
-
-    	function scene1_videoElement_binding(value) {
-    		/*scene1_videoElement_binding*/ ctx[10](value);
-    	}
-
-    	function scene1_currentScene_binding(value) {
-    		/*scene1_currentScene_binding*/ ctx[11](value);
-    	}
-
-    	let scene1_props = {};
-
-    	if (/*sceneVideo*/ ctx[0] !== void 0) {
-    		scene1_props.videoElement = /*sceneVideo*/ ctx[0];
-    	}
-
-    	if (/*currentScene*/ ctx[3] !== void 0) {
-    		scene1_props.currentScene = /*currentScene*/ ctx[3];
-    	}
-
-    	scene1 = new Scene1({ props: scene1_props, $$inline: true });
-    	binding_callbacks.push(() => bind(scene1, 'videoElement', scene1_videoElement_binding));
-    	binding_callbacks.push(() => bind(scene1, 'currentScene', scene1_currentScene_binding));
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(scene1.$$.fragment);
-    			add_location(div, file, 76, 8, 2314);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(scene1, div, null);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const scene1_changes = {};
-
-    			if (!updating_videoElement && dirty & /*sceneVideo*/ 1) {
-    				updating_videoElement = true;
-    				scene1_changes.videoElement = /*sceneVideo*/ ctx[0];
-    				add_flush_callback(() => updating_videoElement = false);
-    			}
-
-    			if (!updating_currentScene && dirty & /*currentScene*/ 8) {
-    				updating_currentScene = true;
-    				scene1_changes.currentScene = /*currentScene*/ ctx[3];
-    				add_flush_callback(() => updating_currentScene = false);
-    			}
-
-    			scene1.$set(scene1_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(scene1.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(scene1.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(scene1);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block.name,
-    		type: "if",
-    		source: "(76:0) {#if currentScene == 0}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (58:0) <Fullscreen let:onRequest let:onExit>
-    function create_default_slot(ctx) {
-    	let div1;
-    	let t;
-    	let div0;
-    	let current_block_type_index;
-    	let if_block1;
-    	let current;
-    	let if_block0 = /*showOnMove*/ ctx[2] && create_if_block_7(ctx);
-
-    	const if_block_creators = [
-    		create_if_block,
-    		create_if_block_1,
-    		create_if_block_2,
-    		create_if_block_3,
-    		create_if_block_4,
-    		create_if_block_5,
-    		create_if_block_6
-    	];
-
-    	const if_blocks = [];
-
-    	function select_block_type_1(ctx, dirty) {
-    		if (/*currentScene*/ ctx[3] == 0) return 0;
-    		if (/*currentScene*/ ctx[3] == 1) return 1;
-    		if (/*currentScene*/ ctx[3] == 2) return 2;
-    		if (/*currentScene*/ ctx[3] == 3) return 3;
-    		if (/*currentScene*/ ctx[3] == 4) return 4;
-    		if (/*currentScene*/ ctx[3] == 5) return 5;
-    		if (/*currentScene*/ ctx[3] == 6) return 6;
-    		return -1;
-    	}
-
-    	if (~(current_block_type_index = select_block_type_1(ctx))) {
-    		if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	}
-
-    	const block = {
-    		c: function create() {
-    			div1 = element("div");
     			if (if_block0) if_block0.c();
-    			t = space();
-    			div0 = element("div");
+    			t0 = space();
     			if (if_block1) if_block1.c();
-    			attr_dev(div0, "class", "video-border svelte-sfg9kw");
-    			add_location(div0, file, 74, 1, 2255);
-    			add_location(div1, file, 58, 4, 1565);
+    			t1 = space();
+    			add_location(div, file, 146, 14, 4351);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			if (if_block0) if_block0.m(div1, null);
-    			append_dev(div1, t);
-    			append_dev(div1, div0);
-
-    			if (~current_block_type_index) {
-    				if_blocks[current_block_type_index].m(div0, null);
-    			}
-
+    			insert_dev(target, div, anchor);
+    			if (if_block0) if_block0.m(div, null);
+    			append_dev(div, t0);
+    			if (if_block1) if_block1.m(div, null);
+    			append_dev(div, t1);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*showOnMove*/ ctx[2]) {
+    			if (/*scene*/ ctx[21].type == "video") {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
-    					if (dirty & /*showOnMove*/ 4) {
+    					if (dirty & /*videoList*/ 8) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_7(ctx);
+    					if_block0 = create_if_block_2(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
-    					if_block0.m(div1, t);
+    					if_block0.m(div, t0);
     				}
     			} else if (if_block0) {
     				group_outros();
@@ -3916,59 +3036,432 @@ var app = (function () {
     				check_outros();
     			}
 
-    			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type_1(ctx);
-
-    			if (current_block_type_index === previous_block_index) {
-    				if (~current_block_type_index) {
-    					if_blocks[current_block_type_index].p(ctx, dirty);
-    				}
-    			} else {
+    			if (/*scene*/ ctx[21].type == "poster") {
     				if (if_block1) {
-    					group_outros();
+    					if_block1.p(ctx, dirty);
 
-    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    						if_blocks[previous_block_index] = null;
-    					});
-
-    					check_outros();
-    				}
-
-    				if (~current_block_type_index) {
-    					if_block1 = if_blocks[current_block_type_index];
-
-    					if (!if_block1) {
-    						if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    						if_block1.c();
-    					} else {
-    						if_block1.p(ctx, dirty);
+    					if (dirty & /*videoList*/ 8) {
+    						transition_in(if_block1, 1);
     					}
-
-    					transition_in(if_block1, 1);
-    					if_block1.m(div0, null);
     				} else {
-    					if_block1 = null;
+    					if_block1 = create_if_block_1(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(div, t1);
     				}
+    			} else if (if_block1) {
+    				group_outros();
+
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+
+    				check_outros();
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(if_block0);
     			transition_in(if_block1);
+
+    			add_render_callback(() => {
+    				if (div_outro) div_outro.end(1);
+    				div_intro = create_in_transition(div, fade, {});
+    				div_intro.start();
+    			});
+
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(if_block0);
     			transition_out(if_block1);
+    			if (div_intro) div_intro.invalidate();
+    			div_outro = create_out_transition(div, fade, { duration: 3000 });
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (detaching && div_outro) div_outro.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(145:10) {#if currentScene === sceneNumber}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (148:16) {#if scene.type == "video"}
+    function create_if_block_2(ctx) {
+    	let scenevideo;
+    	let updating_ended;
+    	let updating_scene;
+    	let updating_currentTime;
+    	let current;
+
+    	function scenevideo_ended_binding(value) {
+    		/*scenevideo_ended_binding*/ ctx[13](value);
+    	}
+
+    	function scenevideo_scene_binding(value) {
+    		/*scenevideo_scene_binding*/ ctx[14](value, /*scene*/ ctx[21], /*each_value*/ ctx[22], /*sceneNumber*/ ctx[23]);
+    	}
+
+    	function scenevideo_currentTime_binding(value) {
+    		/*scenevideo_currentTime_binding*/ ctx[15](value);
+    	}
+
+    	let scenevideo_props = { id: /*sceneNumber*/ ctx[23] };
+
+    	if (/*ended*/ ctx[2] !== void 0) {
+    		scenevideo_props.ended = /*ended*/ ctx[2];
+    	}
+
+    	if (/*scene*/ ctx[21] !== void 0) {
+    		scenevideo_props.scene = /*scene*/ ctx[21];
+    	}
+
+    	if (/*currentTime*/ ctx[1] !== void 0) {
+    		scenevideo_props.currentTime = /*currentTime*/ ctx[1];
+    	}
+
+    	scenevideo = new SceneVideo({ props: scenevideo_props, $$inline: true });
+    	binding_callbacks.push(() => bind(scenevideo, 'ended', scenevideo_ended_binding));
+    	binding_callbacks.push(() => bind(scenevideo, 'scene', scenevideo_scene_binding));
+    	binding_callbacks.push(() => bind(scenevideo, 'currentTime', scenevideo_currentTime_binding));
+
+    	const block = {
+    		c: function create() {
+    			create_component(scenevideo.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(scenevideo, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const scenevideo_changes = {};
+
+    			if (!updating_ended && dirty & /*ended*/ 4) {
+    				updating_ended = true;
+    				scenevideo_changes.ended = /*ended*/ ctx[2];
+    				add_flush_callback(() => updating_ended = false);
+    			}
+
+    			if (!updating_scene && dirty & /*videoList*/ 8) {
+    				updating_scene = true;
+    				scenevideo_changes.scene = /*scene*/ ctx[21];
+    				add_flush_callback(() => updating_scene = false);
+    			}
+
+    			if (!updating_currentTime && dirty & /*currentTime*/ 2) {
+    				updating_currentTime = true;
+    				scenevideo_changes.currentTime = /*currentTime*/ ctx[1];
+    				add_flush_callback(() => updating_currentTime = false);
+    			}
+
+    			scenevideo.$set(scenevideo_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(scenevideo.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(scenevideo.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(scenevideo, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(148:16) {#if scene.type == \\\"video\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (151:16) {#if scene.type == "poster"}
+    function create_if_block_1(ctx) {
+    	let sceneposter;
+    	let updating_videoElement;
+    	let updating_scene;
+    	let current;
+
+    	function sceneposter_videoElement_binding(value) {
+    		/*sceneposter_videoElement_binding*/ ctx[16](value);
+    	}
+
+    	function sceneposter_scene_binding(value) {
+    		/*sceneposter_scene_binding*/ ctx[17](value, /*scene*/ ctx[21], /*each_value*/ ctx[22], /*sceneNumber*/ ctx[23]);
+    	}
+
+    	let sceneposter_props = { id: /*sceneNumber*/ ctx[23] };
+
+    	if (/*sceneVideo*/ ctx[4] !== void 0) {
+    		sceneposter_props.videoElement = /*sceneVideo*/ ctx[4];
+    	}
+
+    	if (/*scene*/ ctx[21] !== void 0) {
+    		sceneposter_props.scene = /*scene*/ ctx[21];
+    	}
+
+    	sceneposter = new ScenePoster({ props: sceneposter_props, $$inline: true });
+    	binding_callbacks.push(() => bind(sceneposter, 'videoElement', sceneposter_videoElement_binding));
+    	binding_callbacks.push(() => bind(sceneposter, 'scene', sceneposter_scene_binding));
+
+    	const block = {
+    		c: function create() {
+    			create_component(sceneposter.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(sceneposter, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const sceneposter_changes = {};
+
+    			if (!updating_videoElement && dirty & /*sceneVideo*/ 16) {
+    				updating_videoElement = true;
+    				sceneposter_changes.videoElement = /*sceneVideo*/ ctx[4];
+    				add_flush_callback(() => updating_videoElement = false);
+    			}
+
+    			if (!updating_scene && dirty & /*videoList*/ 8) {
+    				updating_scene = true;
+    				sceneposter_changes.scene = /*scene*/ ctx[21];
+    				add_flush_callback(() => updating_scene = false);
+    			}
+
+    			sceneposter.$set(sceneposter_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(sceneposter.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(sceneposter.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(sceneposter, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(151:16) {#if scene.type == \\\"poster\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (144:8) {#each videoList as scene, sceneNumber}
+    function create_each_block(ctx) {
+    	let if_block_anchor;
+    	let current;
+    	let if_block = /*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[23] && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[23]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*currentScene*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(144:8) {#each videoList as scene, sceneNumber}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (107:2) <Fullscreen let:onRequest let:onExit>
+    function create_default_slot(ctx) {
+    	let div1;
+    	let t;
+    	let div0;
+    	let current;
+    	let if_block = /*showOnMove*/ ctx[6] && create_if_block_3(ctx);
+    	let each_value = /*videoList*/ ctx[3];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			if (if_block) if_block.c();
+    			t = space();
+    			div0 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div0, "class", "video-border svelte-y5zlyi");
+    			add_location(div0, file, 142, 6, 4186);
+    			add_location(div1, file, 107, 4, 3246);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			if (if_block) if_block.m(div1, null);
+    			append_dev(div1, t);
+    			append_dev(div1, div0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div0, null);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*showOnMove*/ ctx[6]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*showOnMove*/ 64) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_3(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div1, t);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (dirty & /*sceneVideo, videoList, ended, currentTime, currentScene*/ 31) {
+    				each_value = /*videoList*/ ctx[3];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div0, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
-    			if (if_block0) if_block0.d();
-
-    			if (~current_block_type_index) {
-    				if_blocks[current_block_type_index].d();
-    			}
+    			if (if_block) if_block.d();
+    			destroy_each(each_blocks, detaching);
     		}
     	};
 
@@ -3976,7 +3469,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(58:0) <Fullscreen let:onRequest let:onExit>",
+    		source: "(107:2) <Fullscreen let:onRequest let:onExit>",
     		ctx
     	});
 
@@ -3985,6 +3478,7 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
+    	let div;
     	let fullscreen;
     	let current;
     	let mounted;
@@ -3995,8 +3489,8 @@ var app = (function () {
     				$$slots: {
     					default: [
     						create_default_slot,
-    						({ onRequest, onExit }) => ({ 18: onRequest, 19: onExit }),
-    						({ onRequest, onExit }) => (onRequest ? 262144 : 0) | (onExit ? 524288 : 0)
+    						({ onRequest, onExit }) => ({ 19: onRequest, 20: onExit }),
+    						({ onRequest, onExit }) => (onRequest ? 524288 : 0) | (onExit ? 1048576 : 0)
     					]
     				},
     				$$scope: { ctx }
@@ -4007,24 +3501,27 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
+    			div = element("div");
     			create_component(fullscreen.$$.fragment);
-    			attr_dev(main, "class", "svelte-sfg9kw");
-    			toggle_class(main, "cursor_black_stamp", /*currentCursor*/ ctx[4] === "black");
-    			toggle_class(main, "cursor_white_stamp", /*currentCursor*/ ctx[4] === "white");
-    			add_location(main, file, 56, 0, 1355);
+    			attr_dev(div, "class", "cursor_black_stamp svelte-y5zlyi");
+    			toggle_class(div, "cursor_black_stamp", /*currentCursor*/ ctx[7] === "black");
+    			toggle_class(div, "cursor_white_stamp", /*currentCursor*/ ctx[7] === "white");
+    			add_location(div, file, 102, 0, 3062);
+    			add_location(main, file, 97, 0, 2997);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			mount_component(fullscreen, main, null);
+    			append_dev(main, div);
+    			mount_component(fullscreen, div, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(main, "mousemove", /*onMouseMove*/ ctx[7], false, false, false),
-    					listen_dev(main, "click", /*onMouseMove*/ ctx[7], false, false, false)
+    					listen_dev(main, "mousemove", /*onMouseMove*/ ctx[10], false, false, false),
+    					listen_dev(main, "click", /*onMouseMove*/ ctx[10], false, false, false)
     				];
 
     				mounted = true;
@@ -4033,18 +3530,18 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const fullscreen_changes = {};
 
-    			if (dirty & /*$$scope, sceneVideo, currentScene, onRequest, fstoggle, onExit, showOnMove*/ 1835023) {
+    			if (dirty & /*$$scope, videoList, sceneVideo, ended, currentTime, currentScene, onRequest, fstoggle, onExit, showOnMove*/ 18350207) {
     				fullscreen_changes.$$scope = { dirty, ctx };
     			}
 
     			fullscreen.$set(fullscreen_changes);
 
-    			if (dirty & /*currentCursor*/ 16) {
-    				toggle_class(main, "cursor_black_stamp", /*currentCursor*/ ctx[4] === "black");
+    			if (dirty & /*currentCursor*/ 128) {
+    				toggle_class(div, "cursor_black_stamp", /*currentCursor*/ ctx[7] === "black");
     			}
 
-    			if (dirty & /*currentCursor*/ 16) {
-    				toggle_class(main, "cursor_white_stamp", /*currentCursor*/ ctx[4] === "white");
+    			if (dirty & /*currentCursor*/ 128) {
+    				toggle_class(div, "cursor_white_stamp", /*currentCursor*/ ctx[7] === "white");
     			}
     		},
     		i: function intro(local) {
@@ -4083,43 +3580,32 @@ var app = (function () {
     	let showOnMove = false;
     	let timer;
     	let currentScene = 0;
+    	let currentTime = 0;
     	let currentCursor = "";
+    	let ended;
+    	console.log(videoList);
 
     	const sceneBack = () => {
-    		if (currentScene > 0) $$invalidate(3, currentScene--, currentScene);
+    		if (currentScene > 0) $$invalidate(0, currentScene--, currentScene);
     		console.log(currentScene);
     	};
 
     	const sceneForward = () => {
-    		if (currentScene < 5) $$invalidate(3, currentScene++, currentScene); else $$invalidate(3, currentScene = 0);
+    		if (currentScene < videoList.length) $$invalidate(0, currentScene++, currentScene); else $$invalidate(0, currentScene = 0);
     		console.log(currentScene);
     	};
 
     	const onMouseMove = () => {
-    		$$invalidate(2, showOnMove = true);
+    		$$invalidate(6, showOnMove = true);
     		clearTimeout(timer);
 
     		timer = setTimeout(
     			() => {
-    				$$invalidate(2, showOnMove = false);
+    				$$invalidate(6, showOnMove = false);
     			},
     			2000
     		);
     	};
-
-    	setInterval(
-    		() => {
-    			console.log("video ended", sceneVideo);
-    			console.log("currentScene", currentScene);
-
-    			if (sceneVideo.ended) {
-    				$$invalidate(2, showOnMove = true);
-    			}
-
-    			if (currentScene == 2 && sceneVideo.currentTime > 4) $$invalidate(4, currentCursor = "black"); else $$invalidate(4, currentCursor = "");
-    		},
-    		500
-    	);
 
     	const writable_props = [];
 
@@ -4129,105 +3615,112 @@ var app = (function () {
 
     	const click_handler = onRequest => {
     		onRequest();
-    		$$invalidate(1, fstoggle = true);
+    		$$invalidate(5, fstoggle = true);
     		screen.orientation.lock("landscape");
     	};
 
     	const click_handler_1 = onExit => {
     		onExit();
-    		$$invalidate(1, fstoggle = false);
+    		$$invalidate(5, fstoggle = false);
     	};
 
-    	function scene1_videoElement_binding(value) {
-    		sceneVideo = value;
-    		$$invalidate(0, sceneVideo);
+    	function scenevideo_ended_binding(value) {
+    		ended = value;
+    		$$invalidate(2, ended);
     	}
 
-    	function scene1_currentScene_binding(value) {
-    		currentScene = value;
-    		$$invalidate(3, currentScene);
+    	function scenevideo_scene_binding(value, scene, each_value, sceneNumber) {
+    		each_value[sceneNumber] = value;
+    		$$invalidate(3, videoList);
     	}
 
-    	function scene2_videoElement_binding(value) {
-    		sceneVideo = value;
-    		$$invalidate(0, sceneVideo);
+    	function scenevideo_currentTime_binding(value) {
+    		currentTime = value;
+    		$$invalidate(1, currentTime);
     	}
 
-    	function scene3_videoElement_binding(value) {
+    	function sceneposter_videoElement_binding(value) {
     		sceneVideo = value;
-    		$$invalidate(0, sceneVideo);
+    		$$invalidate(4, sceneVideo);
     	}
 
-    	function scene4_videoElement_binding(value) {
-    		sceneVideo = value;
-    		$$invalidate(0, sceneVideo);
-    	}
-
-    	function scene5_videoElement_binding(value) {
-    		sceneVideo = value;
-    		$$invalidate(0, sceneVideo);
-    	}
-
-    	function scene6_videoElement_binding(value) {
-    		sceneVideo = value;
-    		$$invalidate(0, sceneVideo);
+    	function sceneposter_scene_binding(value, scene, each_value, sceneNumber) {
+    		each_value[sceneNumber] = value;
+    		$$invalidate(3, videoList);
     	}
 
     	$$self.$capture_state = () => ({
+    		videoList,
     		Menu,
-    		Scene1,
-    		Scene2,
-    		Scene3,
-    		Scene4,
-    		Scene5,
-    		Scene6,
     		fade,
     		fly,
+    		SceneVideo,
+    		ScenePoster,
     		Fullscreen,
     		MdFullscreen,
     		MdFullscreenExit,
+    		each,
     		sceneVideo,
     		fstoggle,
     		showOnMove,
     		timer,
     		currentScene,
+    		currentTime,
     		currentCursor,
+    		ended,
     		sceneBack,
     		sceneForward,
     		onMouseMove
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('sceneVideo' in $$props) $$invalidate(0, sceneVideo = $$props.sceneVideo);
-    		if ('fstoggle' in $$props) $$invalidate(1, fstoggle = $$props.fstoggle);
-    		if ('showOnMove' in $$props) $$invalidate(2, showOnMove = $$props.showOnMove);
+    		if ('sceneVideo' in $$props) $$invalidate(4, sceneVideo = $$props.sceneVideo);
+    		if ('fstoggle' in $$props) $$invalidate(5, fstoggle = $$props.fstoggle);
+    		if ('showOnMove' in $$props) $$invalidate(6, showOnMove = $$props.showOnMove);
     		if ('timer' in $$props) timer = $$props.timer;
-    		if ('currentScene' in $$props) $$invalidate(3, currentScene = $$props.currentScene);
-    		if ('currentCursor' in $$props) $$invalidate(4, currentCursor = $$props.currentCursor);
+    		if ('currentScene' in $$props) $$invalidate(0, currentScene = $$props.currentScene);
+    		if ('currentTime' in $$props) $$invalidate(1, currentTime = $$props.currentTime);
+    		if ('currentCursor' in $$props) $$invalidate(7, currentCursor = $$props.currentCursor);
+    		if ('ended' in $$props) $$invalidate(2, ended = $$props.ended);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*ended*/ 4) {
+    			$$invalidate(6, showOnMove = ended || false);
+    		}
+
+    		if ($$self.$$.dirty & /*currentScene, currentTime*/ 3) {
+    			if (currentScene == 2 && currentTime > 4) {
+    				$$invalidate(7, currentCursor = "black");
+    			} else {
+    				$$invalidate(7, currentCursor = "");
+    			}
+    		}
+    	};
+
     	return [
+    		currentScene,
+    		currentTime,
+    		ended,
+    		videoList,
     		sceneVideo,
     		fstoggle,
     		showOnMove,
-    		currentScene,
     		currentCursor,
     		sceneBack,
     		sceneForward,
     		onMouseMove,
     		click_handler,
     		click_handler_1,
-    		scene1_videoElement_binding,
-    		scene1_currentScene_binding,
-    		scene2_videoElement_binding,
-    		scene3_videoElement_binding,
-    		scene4_videoElement_binding,
-    		scene5_videoElement_binding,
-    		scene6_videoElement_binding
+    		scenevideo_ended_binding,
+    		scenevideo_scene_binding,
+    		scenevideo_currentTime_binding,
+    		sceneposter_videoElement_binding,
+    		sceneposter_scene_binding
     	];
     }
 
