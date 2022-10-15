@@ -1,7 +1,7 @@
 <script>
   import videoList from "./videolist.json";
   import Menu from "./components/menu.svelte";
-  import { fade, fly } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import SceneVideo from "./scenes/sceneVideo.svelte";
   import ScenePoster from "./scenes/scenePoster.svelte";
   import {onMount} from 'svelte';
@@ -53,26 +53,100 @@
   }
 
   function transitionIn(node, scene) {
-	const opacity = +getComputedStyle(node).opacity;
-    let delay = scene.transition.delay|| 0;
-	let duration = scene.transition.duration ||400;
-	return {
-		delay,
-		duration,
-		css: t => `opacity: ${t * opacity}`
-	};
+    if(scene === undefined) return;
+
+const style = getComputedStyle(node);
+const opacity = +style.opacity;
+const transform = style.transform === 'none' ? '' : style.transform;
+
+let delay = scene.transition.delay || 0;
+let duration = scene.transition.duration || 400;
+let x = ~scene.transition.x || 0
+let y = ~scene.transition.y || 0
+if(scene.transition.type === 'fade') {
+    return {
+    delay,
+    duration,
+    css: t => `opacity: ${t * opacity}`
+};
+}
+if(scene.transition.type === 'slide') {
+    console.log('slide out')
+
+    let xValue = x;
+    let xUnit = 'px'
+    if (typeof x === 'string') {
+        const xMatch = x.match(/([-\d.]+)(\D+)/);
+        xValue = Number(xMatch[1]);
+        xUnit = xMatch[2];
+    }
+
+    let yValue = y;
+    let yUnit = 'px'
+    if (typeof y === 'string') {
+        const yMatch = y.match(/([-\d.]+)(\D+)/);
+        yValue = Number(yMatch[1]);
+        yUnit = yMatch[2];
+    }
+
+    return {
+        delay,
+        duration,
+        css: (t, u) => `
+            transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
+    };
+}
+
 }
 
   function transitionOut(node, scene) {
-	const opacity = +getComputedStyle(node).opacity;
-    let delay = scene.transition.delay || 200;
+    if(scene === undefined) return;
+
+    const style = getComputedStyle(node);
+	const opacity = +style.opacity;
+    const transform = style.transform === 'none' ? '' : style.transform;
+
+    let delay = scene.transition.delay || 0;
 	let duration = scene.transition.duration || 400;
-	return {
+    let x = scene.transition.x || 0
+    let y = scene.transition.y || 0
+    if(scene.transition.type === 'fade') {
+        return {
 		delay,
 		duration,
 		css: t => `opacity: ${t * opacity}`
 	};
+    }
+    if(scene.transition.type === 'slide') {
+        console.log('slide out')
+	
+		let xValue = x;
+		let xUnit = 'px'
+		if (typeof x === 'string') {
+			const xMatch = x.match(/([-\d.]+)(\D+)/);
+			xValue = Number(xMatch[1]);
+			xUnit = xMatch[2];
+		}
+	
+		let yValue = y;
+		let yUnit = 'px'
+		if (typeof y === 'string') {
+			const yMatch = y.match(/([-\d.]+)(\D+)/);
+			yValue = Number(yMatch[1]);
+			yUnit = yMatch[2];
+		}
+	
+		return {
+			delay,
+			duration,
+			css: (t, u) => `
+				transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
+		};
+    }
+	
 }
+
+
 </script>
 
 <main
@@ -157,15 +231,15 @@ class:cursor_white_stamp={currentCursor === "white"}
   .left-button {
     z-index: 10;
     position: fixed;
-    left: 2vw;
-    bottom: 2vh;
+    left: 3vw;
+    bottom: 8vh;
   }
 
   .right-button {
     z-index: 10;
     position: fixed;
-    right: 2vw;
-    bottom: 2vh;
+    right: 3vw;
+    bottom: 8vh;
   }
 
   .cursor_black_stamp {

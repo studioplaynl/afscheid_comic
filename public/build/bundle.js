@@ -933,7 +933,7 @@ var app = (function () {
         $inject_state() { }
     }
 
-    var videoList = [{type:"video",file:"sc1_sound_1080p_25fps_HQ.m4v",transition:{type:"",x:"",duration:""}},{type:"poster",file:"poster.png",transition:{type:"",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}}];
+    var videoList = [{type:"video",file:"sc1_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"poster",file:"poster.png",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.m4v",transition:{type:"slide",x:200,duration:300}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}}];
 
     /* node_modules/svelte-icons/components/IconBase.svelte generated by Svelte v3.49.0 */
 
@@ -1768,11 +1768,6 @@ var app = (function () {
     	}
     }
 
-    function cubicOut(t) {
-        const f = t - 1.0;
-        return f * f * f + 1.0;
-    }
-
     function fade(node, { delay = 0, duration = 400, easing = identity } = {}) {
         const o = +getComputedStyle(node).opacity;
         return {
@@ -1780,20 +1775,6 @@ var app = (function () {
             duration,
             easing,
             css: t => `opacity: ${t * o}`
-        };
-    }
-    function fly(node, { delay = 0, duration = 400, easing = cubicOut, x = 0, y = 0, opacity = 0 } = {}) {
-        const style = getComputedStyle(node);
-        const target_opacity = +style.opacity;
-        const transform = style.transform === 'none' ? '' : style.transform;
-        const od = target_opacity * (1 - opacity);
-        return {
-            delay,
-            duration,
-            easing,
-            css: (t, u) => `
-			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
-			opacity: ${target_opacity - (od * u)}`
         };
     }
 
@@ -1830,11 +1811,12 @@ var app = (function () {
     			t = text("\n  Your browser does not support the video tag.");
     			if (!src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[3].file)) attr_dev(source, "src", source_src_value);
     			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$5, 11, 4, 231);
+    			add_location(source, file$5, 11, 4, 243);
     			attr_dev(video, "class", "Scene svelte-11b3wyi");
     			attr_dev(video, "id", /*id*/ ctx[4]);
     			video.autoplay = true;
     			video.controls = true;
+    			video.playsInline = true;
     			if (/*ended*/ ctx[1] === void 0 || /*currentTime*/ ctx[0] === void 0) add_render_callback(video_timeupdate_handler);
     			if (/*ended*/ ctx[1] === void 0) add_render_callback(() => /*video_ended_handler*/ ctx[6].call(video));
     			add_location(video, file$5, 10, 0, 123);
@@ -2051,47 +2033,31 @@ var app = (function () {
     const file$4 = "src/scenes/scenePoster.svelte";
 
     function create_fragment$4(ctx) {
-    	let video;
-    	let source;
-    	let source_src_value;
-    	let t;
-    	let video_class_value;
+    	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
-    			video = element("video");
-    			source = element("source");
-    			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[1].file)) attr_dev(source, "src", source_src_value);
-    			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$4, 9, 4, 151);
-    			attr_dev(video, "class", video_class_value = "Scene" + /*id*/ ctx[2] + " svelte-bns05s");
-    			video.autoplay = true;
-    			add_location(video, file$4, 8, 0, 85);
+    			img = element("img");
+    			if (!src_url_equal(img.src, img_src_value = "/img/" + /*scene*/ ctx[0].file)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "class", "svelte-1cmejey");
+    			add_location(img, file$4, 6, 4, 47);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, video, anchor);
-    			append_dev(video, source);
-    			append_dev(video, t);
-    			/*video_binding*/ ctx[3](video);
+    			insert_dev(target, img, anchor);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*scene*/ 2 && !src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[1].file)) {
-    				attr_dev(source, "src", source_src_value);
-    			}
-
-    			if (dirty & /*id*/ 4 && video_class_value !== (video_class_value = "Scene" + /*id*/ ctx[2] + " svelte-bns05s")) {
-    				attr_dev(video, "class", video_class_value);
+    			if (dirty & /*scene*/ 1 && !src_url_equal(img.src, img_src_value = "/img/" + /*scene*/ ctx[0].file)) {
+    				attr_dev(img, "src", img_src_value);
     			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(video);
-    			/*video_binding*/ ctx[3](null);
+    			if (detaching) detach_dev(img);
     		}
     	};
 
@@ -2109,47 +2075,34 @@ var app = (function () {
     function instance$4($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ScenePoster', slots, []);
-    	let { videoElement } = $$props;
     	let { scene } = $$props;
-    	let { id } = $$props;
-    	const writable_props = ['videoElement', 'scene', 'id'];
+    	const writable_props = ['scene'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<ScenePoster> was created with unknown prop '${key}'`);
     	});
 
-    	function video_binding($$value) {
-    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-    			videoElement = $$value;
-    			$$invalidate(0, videoElement);
-    		});
-    	}
-
     	$$self.$$set = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    		if ('scene' in $$props) $$invalidate(1, scene = $$props.scene);
-    		if ('id' in $$props) $$invalidate(2, id = $$props.id);
+    		if ('scene' in $$props) $$invalidate(0, scene = $$props.scene);
     	};
 
-    	$$self.$capture_state = () => ({ videoElement, scene, id });
+    	$$self.$capture_state = () => ({ scene });
 
     	$$self.$inject_state = $$props => {
-    		if ('videoElement' in $$props) $$invalidate(0, videoElement = $$props.videoElement);
-    		if ('scene' in $$props) $$invalidate(1, scene = $$props.scene);
-    		if ('id' in $$props) $$invalidate(2, id = $$props.id);
+    		if ('scene' in $$props) $$invalidate(0, scene = $$props.scene);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [videoElement, scene, id, video_binding];
+    	return [scene];
     }
 
     class ScenePoster extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { videoElement: 0, scene: 1, id: 2 });
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { scene: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -2161,25 +2114,9 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*videoElement*/ ctx[0] === undefined && !('videoElement' in props)) {
-    			console.warn("<ScenePoster> was created without expected prop 'videoElement'");
-    		}
-
-    		if (/*scene*/ ctx[1] === undefined && !('scene' in props)) {
+    		if (/*scene*/ ctx[0] === undefined && !('scene' in props)) {
     			console.warn("<ScenePoster> was created without expected prop 'scene'");
     		}
-
-    		if (/*id*/ ctx[2] === undefined && !('id' in props)) {
-    			console.warn("<ScenePoster> was created without expected prop 'id'");
-    		}
-    	}
-
-    	get videoElement() {
-    		throw new Error("<ScenePoster>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set videoElement(value) {
-    		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
     	get scene() {
@@ -2187,14 +2124,6 @@ var app = (function () {
     	}
 
     	set scene(value) {
-    		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get id() {
-    		throw new Error("<ScenePoster>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set id(value) {
     		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -2843,7 +2772,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (89:6) {#if showOnMove}
+    // (163:6) {#if showOnMove}
     function create_if_block_3(ctx) {
     	let div;
     	let current_block_type_index;
@@ -2881,17 +2810,17 @@ var app = (function () {
     			t1 = space();
     			a1 = element("a");
     			img1 = element("img");
-    			attr_dev(img0, "class", "icon svelte-xzqs56");
+    			attr_dev(img0, "class", "icon svelte-ns1ao6");
     			if (!src_url_equal(img0.src, img0_src_value = "img/back.png")) attr_dev(img0, "src", img0_src_value);
-    			add_location(img0, file, 113, 13, 2830);
-    			attr_dev(a0, "class", "left-button svelte-xzqs56");
-    			add_location(a0, file, 112, 10, 2773);
-    			attr_dev(img1, "class", "icon svelte-xzqs56");
+    			add_location(img0, file, 187, 13, 4561);
+    			attr_dev(a0, "class", "left-button svelte-ns1ao6");
+    			add_location(a0, file, 186, 10, 4504);
+    			attr_dev(img1, "class", "icon svelte-ns1ao6");
     			if (!src_url_equal(img1.src, img1_src_value = "img/next.png")) attr_dev(img1, "src", img1_src_value);
-    			add_location(img1, file, 116, 13, 2956);
-    			attr_dev(a1, "class", "right-button svelte-xzqs56");
-    			add_location(a1, file, 115, 10, 2895);
-    			add_location(div, file, 89, 8, 2161);
+    			add_location(img1, file, 190, 13, 4687);
+    			attr_dev(a1, "class", "right-button svelte-ns1ao6");
+    			add_location(a1, file, 189, 10, 4626);
+    			add_location(div, file, 163, 8, 3892);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2970,14 +2899,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(89:6) {#if showOnMove}",
+    		source: "(163:6) {#if showOnMove}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (102:10) {:else}
+    // (176:10) {:else}
     function create_else_block(ctx) {
     	let div;
     	let mdfullscreenexit;
@@ -2994,8 +2923,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(mdfullscreenexit.$$.fragment);
-    			attr_dev(div, "class", "fullscreen-toggle svelte-xzqs56");
-    			add_location(div, file, 102, 12, 2525);
+    			attr_dev(div, "class", "fullscreen-toggle svelte-ns1ao6");
+    			add_location(div, file, 176, 12, 4256);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3031,14 +2960,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(102:10) {:else}",
+    		source: "(176:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:10) {#if !fstoggle}
+    // (165:10) {#if !fstoggle}
     function create_if_block_4(ctx) {
     	let div;
     	let mdfullscreen;
@@ -3055,8 +2984,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(mdfullscreen.$$.fragment);
-    			attr_dev(div, "class", "fullscreen-toggle svelte-xzqs56");
-    			add_location(div, file, 91, 12, 2221);
+    			attr_dev(div, "class", "fullscreen-toggle svelte-ns1ao6");
+    			add_location(div, file, 165, 12, 3952);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3092,14 +3021,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(91:10) {#if !fstoggle}",
+    		source: "(165:10) {#if !fstoggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (125:10) {#if currentScene === sceneNumber}
+    // (199:10) {#if currentScene === sceneNumber}
     function create_if_block(ctx) {
     	let div;
     	let t0;
@@ -3117,7 +3046,7 @@ var app = (function () {
     			t0 = space();
     			if (if_block1) if_block1.c();
     			t1 = space();
-    			add_location(div, file, 126, 14, 3245);
+    			add_location(div, file, 200, 14, 4976);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3208,14 +3137,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(125:10) {#if currentScene === sceneNumber}",
+    		source: "(199:10) {#if currentScene === sceneNumber}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:16) {#if scene.type == "video"}
+    // (202:16) {#if scene.type == "video"}
     function create_if_block_2(ctx) {
     	let scenevideo;
     	let updating_ended;
@@ -3320,14 +3249,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(128:16) {#if scene.type == \\\"video\\\"}",
+    		source: "(202:16) {#if scene.type == \\\"video\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (131:16) {#if scene.type == "poster"}
+    // (205:16) {#if scene.type == "poster"}
     function create_if_block_1(ctx) {
     	let sceneposter;
     	let updating_videoElement;
@@ -3400,14 +3329,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(131:16) {#if scene.type == \\\"poster\\\"}",
+    		source: "(205:16) {#if scene.type == \\\"poster\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (124:8) {#each videoList as scene, sceneNumber}
+    // (198:8) {#each videoList as scene, sceneNumber}
     function create_each_block(ctx) {
     	let if_block_anchor;
     	let current;
@@ -3466,14 +3395,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(124:8) {#each videoList as scene, sceneNumber}",
+    		source: "(198:8) {#each videoList as scene, sceneNumber}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:2) <Fullscreen let:onRequest let:onExit>
+    // (161:2) <Fullscreen let:onRequest let:onExit>
     function create_default_slot(ctx) {
     	let div1;
     	let t0;
@@ -3521,9 +3450,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div0, "class", "video-border svelte-xzqs56");
-    			add_location(div0, file, 122, 6, 3080);
-    			add_location(div1, file, 87, 4, 2124);
+    			attr_dev(div0, "class", "video-border svelte-ns1ao6");
+    			add_location(div0, file, 196, 6, 4811);
+    			add_location(div1, file, 161, 4, 3855);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -3635,7 +3564,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(87:2) <Fullscreen let:onRequest let:onExit>",
+    		source: "(161:2) <Fullscreen let:onRequest let:onExit>",
     		ctx
     	});
 
@@ -3669,11 +3598,11 @@ var app = (function () {
     			main = element("main");
     			div = element("div");
     			create_component(fullscreen.$$.fragment);
-    			attr_dev(div, "class", "cursor_black_stamp svelte-xzqs56");
+    			attr_dev(div, "class", "cursor_black_stamp svelte-ns1ao6");
     			toggle_class(div, "cursor_black_stamp", /*currentCursor*/ ctx[7] === "black");
     			toggle_class(div, "cursor_white_stamp", /*currentCursor*/ ctx[7] === "white");
-    			add_location(div, file, 82, 0, 1940);
-    			add_location(main, file, 77, 0, 1875);
+    			add_location(div, file, 156, 0, 3671);
+    			add_location(main, file, 151, 0, 3606);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3739,27 +3668,97 @@ var app = (function () {
     }
 
     function transitionIn(node, scene) {
-    	const opacity = +getComputedStyle(node).opacity;
+    	if (scene === undefined) return;
+    	const style = getComputedStyle(node);
+    	const opacity = +style.opacity;
+    	const transform = style.transform === 'none' ? '' : style.transform;
     	let delay = scene.transition.delay || 0;
     	let duration = scene.transition.duration || 400;
+    	let x = ~scene.transition.x || 0;
+    	let y = ~scene.transition.y || 0;
 
-    	return {
-    		delay,
-    		duration,
-    		css: t => `opacity: ${t * opacity}`
-    	};
+    	if (scene.transition.type === 'fade') {
+    		return {
+    			delay,
+    			duration,
+    			css: t => `opacity: ${t * opacity}`
+    		};
+    	}
+
+    	if (scene.transition.type === 'slide') {
+    		console.log('slide out');
+    		let xValue = x;
+    		let xUnit = 'px';
+
+    		if (typeof x === 'string') {
+    			const xMatch = x.match(/([-\d.]+)(\D+)/);
+    			xValue = Number(xMatch[1]);
+    			xUnit = xMatch[2];
+    		}
+
+    		let yValue = y;
+    		let yUnit = 'px';
+
+    		if (typeof y === 'string') {
+    			const yMatch = y.match(/([-\d.]+)(\D+)/);
+    			yValue = Number(yMatch[1]);
+    			yUnit = yMatch[2];
+    		}
+
+    		return {
+    			delay,
+    			duration,
+    			css: (t, u) => `
+            transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
+    		};
+    	}
     }
 
     function transitionOut(node, scene) {
-    	const opacity = +getComputedStyle(node).opacity;
-    	let delay = scene.transition.delay || 200;
+    	if (scene === undefined) return;
+    	const style = getComputedStyle(node);
+    	const opacity = +style.opacity;
+    	const transform = style.transform === 'none' ? '' : style.transform;
+    	let delay = scene.transition.delay || 0;
     	let duration = scene.transition.duration || 400;
+    	let x = scene.transition.x || 0;
+    	let y = scene.transition.y || 0;
 
-    	return {
-    		delay,
-    		duration,
-    		css: t => `opacity: ${t * opacity}`
-    	};
+    	if (scene.transition.type === 'fade') {
+    		return {
+    			delay,
+    			duration,
+    			css: t => `opacity: ${t * opacity}`
+    		};
+    	}
+
+    	if (scene.transition.type === 'slide') {
+    		console.log('slide out');
+    		let xValue = x;
+    		let xUnit = 'px';
+
+    		if (typeof x === 'string') {
+    			const xMatch = x.match(/([-\d.]+)(\D+)/);
+    			xValue = Number(xMatch[1]);
+    			xUnit = xMatch[2];
+    		}
+
+    		let yValue = y;
+    		let yUnit = 'px';
+
+    		if (typeof y === 'string') {
+    			const yMatch = y.match(/([-\d.]+)(\D+)/);
+    			yValue = Number(yMatch[1]);
+    			yUnit = yMatch[2];
+    		}
+
+    		return {
+    			delay,
+    			duration,
+    			css: (t, u) => `
+				transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
+    		};
+    	}
     }
 
     function instance($$self, $$props, $$invalidate) {
@@ -3858,7 +3857,6 @@ var app = (function () {
     		videoList,
     		Menu,
     		fade,
-    		fly,
     		SceneVideo,
     		ScenePoster,
     		onMount,

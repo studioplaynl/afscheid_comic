@@ -8,7 +8,7 @@
 </script>
 
 
-<video class="Scene" id="{id}" bind:ended bind:currentTime={currentTime} autoplay controls bind:paused>
+<video class="Scene" id="{id}" bind:ended bind:currentTime={currentTime} autoplay controls bind:paused playsinline>
     <source src="/video/{scene.file}" type="video/mp4">
   Your browser does not support the video tag.
   </video> 

@@ -1,20 +1,17 @@
 <script>
-  export let videoElement
   export let scene
-  export let id
   
 </script>
 
 
-<video class="Scene{id}" bind:this="{videoElement}" autoplay>
-    <source src="/video/{scene.file}" type="video/mp4">
-  Your browser does not support the video tag.
-  </video> 
+    <img src="/img/{scene.file}" >
 
 
 
 <style>
-video {
+img {
   z-index: 2;
+  max-height: 100vh;
+  max-width: 100vw;
 }
 </style>
