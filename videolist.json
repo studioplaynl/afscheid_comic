@@ -1,15 +1,20 @@
 [
-{"type": "video", "file": "sc1_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "poster", "file": "poster.png", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
+{"type": "video", "file": "sc1_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
+{"type": "video", "file": "sc2_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc3_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
+{"type": "video", "file": "sc4_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc5_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
+{"type": "video", "file": "sc6_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc7_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc8_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
-{"type": "video", "file": "sc9_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },        
+{"type": "video", "file": "sc9_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
+{"type": "video", "file": "sc10_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },        
 {"type": "video", "file": "sc11_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc12_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc13_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc14_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
+{"type": "video", "file": "sc15_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc16_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc17_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc18_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
@@ -22,5 +27,4 @@
 {"type": "video", "file": "sc25_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc26_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
 {"type": "video", "file": "sc27_sound_1080p_25fps_HQ.mov", "transitionIn": {"type": "", "x": "", "duration": ""}, "transitionOut": {"type": "", "x": "", "duration": ""} },
-
 ]
