@@ -933,7 +933,7 @@ var app = (function () {
         $inject_state() { }
     }
 
-    var videoList = [{type:"video",file:"sc1_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"",x:"",duration:""},transitionOut:{type:"",x:"",duration:""}},{type:"poster",file:"poster.png",transitionIn:{type:"",x:"",duration:""},transitionOut:{type:"",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.m4v",transitionIn:{type:"fade",x:"",duration:""},transitionOut:{type:"fade",x:"",duration:""}}];
+    var videoList = [{type:"video",file:"sc1_sound_1080p_25fps_HQ.m4v",transition:{type:"",x:"",duration:""}},{type:"poster",file:"poster.png",transition:{type:"",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}}];
 
     /* node_modules/svelte-icons/components/IconBase.svelte generated by Svelte v3.49.0 */
 
@@ -1401,8 +1401,8 @@ var app = (function () {
     /* src/components/menu.svelte generated by Svelte v3.49.0 */
     const file$6 = "src/components/menu.svelte";
 
-    // (50:4) {:else}
-    function create_else_block$1(ctx) {
+    // (18:23) 
+    function create_if_block_2$1(ctx) {
     	let img;
     	let img_src_value;
 
@@ -1410,8 +1410,8 @@ var app = (function () {
     		c: function create() {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = "img/menuShoe.png")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-1f088bq");
-    			add_location(img, file$6, 50, 8, 729);
+    			attr_dev(img, "class", "svelte-l7ndjc");
+    			add_location(img, file$6, 18, 4, 370);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1425,16 +1425,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$1.name,
-    		type: "else",
-    		source: "(50:4) {:else}",
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(18:23) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:4) {#if menuOpen}
+    // (16:2) {#if menuOpen}
     function create_if_block_1$1(ctx) {
     	let mdclose;
     	let current;
@@ -1466,54 +1466,90 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(48:4) {#if menuOpen}",
+    		source: "(16:2) {#if menuOpen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:4) {#if menuOpen}
+    // (23:0) {#if menuOpen}
     function create_if_block$1(ctx) {
     	let div;
-    	let nav;
-    	let li0;
-    	let a0;
+    	let p0;
     	let t1;
-    	let li1;
-    	let a1;
+    	let p1;
+    	let t2;
+    	let p2;
+    	let t4;
+    	let p3;
+    	let t5;
+    	let p4;
+    	let t7;
+    	let p5;
+    	let t8;
+    	let p6;
+    	let t10;
+    	let p7;
+    	let t11;
+    	let p8;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			nav = element("nav");
-    			li0 = element("li");
-    			a0 = element("a");
-    			a0.textContent = "Home";
+    			p0 = element("p");
+    			p0.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at justo\n      sagittis libero condimentum aliquet. Etiam rhoncus libero id ipsum\n      placerat efficitur. Suspendisse at sapien a lorem gravida imperdiet a in\n      sem. Pellentesque pharetra nulla nec lectus feugiat, nec posuere dui\n      sagittis. In ut lorem in libero dapibus faucibus. Cras et suscipit dolor,\n      a cursus urna. Donec in commodo ante.";
     			t1 = space();
-    			li1 = element("li");
-    			a1 = element("a");
-    			a1.textContent = "About";
-    			attr_dev(a0, "class", "svelte-1f088bq");
-    			add_location(a0, file$6, 56, 16, 841);
-    			attr_dev(li0, "class", "svelte-1f088bq");
-    			add_location(li0, file$6, 56, 12, 837);
-    			attr_dev(a1, "class", "svelte-1f088bq");
-    			add_location(a1, file$6, 57, 16, 874);
-    			attr_dev(li1, "class", "svelte-1f088bq");
-    			add_location(li1, file$6, 57, 12, 870);
-    			add_location(nav, file$6, 55, 8, 819);
-    			attr_dev(div, "class", "menu svelte-1f088bq");
-    			add_location(div, file$6, 54, 4, 792);
+    			p1 = element("p");
+    			t2 = space();
+    			p2 = element("p");
+    			p2.textContent = "Vivamus nec euismod leo, et venenatis urna. Vivamus rhoncus porttitor\n      dapibus. Duis dui urna, tristique efficitur ligula non, faucibus\n      sollicitudin dui. Pellentesque ut felis eget metus euismod iaculis.\n      Suspendisse lobortis ligula ac ipsum faucibus, ultricies tempor magna\n      egestas. Phasellus finibus faucibus diam, aliquam mollis nunc facilisis\n      ac. Aliquam erat volutpat. Nam facilisis nulla ut mi pharetra fermentum.\n      Mauris convallis eu quam sit amet ornare.";
+    			t4 = space();
+    			p3 = element("p");
+    			t5 = space();
+    			p4 = element("p");
+    			p4.textContent = "Nam pharetra sem suscipit lacinia iaculis. Pellentesque habitant morbi\n      tristique senectus et netus et malesuada fames ac turpis egestas. Quisque\n      libero dolor, volutpat ullamcorper ante non, accumsan fringilla dolor.\n      Nunc et vehicula massa, id sagittis nibh. Praesent finibus mattis sapien a\n      blandit. Pellentesque eu ultricies sapien, quis porta nisl. Sed commodo\n      velit diam, sit amet tristique libero suscipit ut. Morbi sit amet ex a\n      mauris dignissim fringilla ac quis enim. Proin metus libero, egestas ac\n      sodales vitae, iaculis in enim. Maecenas id posuere orci. Maecenas vel\n      eleifend eros.";
+    			t7 = space();
+    			p5 = element("p");
+    			t8 = space();
+    			p6 = element("p");
+    			p6.textContent = "Fusce a augue vel nulla eleifend eleifend non ut odio. Donec cursus\n      pretium efficitur. Phasellus tristique, nibh a molestie viverra, metus\n      orci venenatis erat, at cursus nulla lectus quis sem. Ut commodo finibus\n      laoreet. Aenean condimentum erat id mattis hendrerit. Phasellus sit amet\n      nisi bibendum, viverra turpis nec, gravida mauris. In non auctor risus.\n      Vestibulum id velit facilisis, commodo urna et, varius dui. Pellentesque\n      dictum nulla justo, vitae efficitur ex rhoncus porttitor. Integer nec\n      lobortis quam, et accumsan nunc. Duis imperdiet maximus lobortis. Duis nec\n      justo nisl. In tincidunt risus nec turpis vehicula, eget dapibus massa\n      consectetur. Sed faucibus sit amet nisi eget vestibulum.";
+    			t10 = space();
+    			p7 = element("p");
+    			t11 = space();
+    			p8 = element("p");
+    			p8.textContent = "Aenean rhoncus vestibulum odio, sed convallis felis cursus sit amet. Morbi\n      euismod nibh ac dui semper venenatis. Praesent malesuada pulvinar\n      pulvinar. Ut condimentum vestibulum metus eu gravida. Nullam purus dolor,\n      tincidunt vel nunc eget, rhoncus blandit turpis. Proin at mauris in dui\n      congue viverra sed vel odio. Ut sed lectus magna. Etiam rhoncus sodales\n      imperdiet. Mauris mauris erat, finibus a ipsum vel, condimentum interdum\n      ex.";
+    			add_location(p0, file$6, 24, 4, 458);
+    			add_location(p1, file$6, 32, 4, 902);
+    			add_location(p2, file$6, 33, 4, 912);
+    			add_location(p3, file$6, 42, 4, 1431);
+    			add_location(p4, file$6, 43, 4, 1441);
+    			add_location(p5, file$6, 54, 4, 2104);
+    			add_location(p6, file$6, 55, 4, 2114);
+    			add_location(p7, file$6, 67, 4, 2894);
+    			add_location(p8, file$6, 68, 4, 2904);
+    			attr_dev(div, "class", "about svelte-l7ndjc");
+    			add_location(div, file$6, 23, 2, 434);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, nav);
-    			append_dev(nav, li0);
-    			append_dev(li0, a0);
-    			append_dev(nav, t1);
-    			append_dev(nav, li1);
-    			append_dev(li1, a1);
+    			append_dev(div, p0);
+    			append_dev(div, t1);
+    			append_dev(div, p1);
+    			append_dev(div, t2);
+    			append_dev(div, p2);
+    			append_dev(div, t4);
+    			append_dev(div, p3);
+    			append_dev(div, t5);
+    			append_dev(div, p4);
+    			append_dev(div, t7);
+    			append_dev(div, p5);
+    			append_dev(div, t8);
+    			append_dev(div, p6);
+    			append_dev(div, t10);
+    			append_dev(div, p7);
+    			append_dev(div, t11);
+    			append_dev(div, p8);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -1524,7 +1560,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(54:4) {#if menuOpen}",
+    		source: "(23:0) {#if menuOpen}",
     		ctx
     	});
 
@@ -1536,42 +1572,52 @@ var app = (function () {
     	let current_block_type_index;
     	let if_block0;
     	let t;
+    	let if_block1_anchor;
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block_1$1, create_else_block$1];
+    	const if_block_creators = [create_if_block_1$1, create_if_block_2$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*menuOpen*/ ctx[0]) return 0;
-    		return 1;
+    		if (/*menuOpen*/ ctx[1]) return 0;
+    		if (/*showOnMove*/ ctx[0]) return 1;
+    		return -1;
     	}
 
-    	current_block_type_index = select_block_type(ctx);
-    	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	let if_block1 = /*menuOpen*/ ctx[0] && create_if_block$1(ctx);
+    	if (~(current_block_type_index = select_block_type(ctx))) {
+    		if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	}
+
+    	let if_block1 = /*menuOpen*/ ctx[1] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			if_block0.c();
+    			if (if_block0) if_block0.c();
     			t = space();
     			if (if_block1) if_block1.c();
-    			attr_dev(div, "class", "menu-icon svelte-1f088bq");
-    			add_location(div, file$6, 46, 0, 624);
+    			if_block1_anchor = empty();
+    			attr_dev(div, "class", "menu-icon svelte-l7ndjc");
+    			add_location(div, file$6, 14, 0, 263);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			if_blocks[current_block_type_index].m(div, null);
-    			append_dev(div, t);
-    			if (if_block1) if_block1.m(div, null);
+
+    			if (~current_block_type_index) {
+    				if_blocks[current_block_type_index].m(div, null);
+    			}
+
+    			insert_dev(target, t, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, if_block1_anchor, anchor);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", /*MenuToggle*/ ctx[1], false, false, false);
+    				dispose = listen_dev(div, "click", /*MenuToggle*/ ctx[2], false, false, false);
     				mounted = true;
     			}
     		},
@@ -1580,29 +1626,36 @@ var app = (function () {
     			current_block_type_index = select_block_type(ctx);
 
     			if (current_block_type_index !== previous_block_index) {
-    				group_outros();
+    				if (if_block0) {
+    					group_outros();
 
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
+    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    						if_blocks[previous_block_index] = null;
+    					});
 
-    				check_outros();
-    				if_block0 = if_blocks[current_block_type_index];
-
-    				if (!if_block0) {
-    					if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block0.c();
+    					check_outros();
     				}
 
-    				transition_in(if_block0, 1);
-    				if_block0.m(div, t);
+    				if (~current_block_type_index) {
+    					if_block0 = if_blocks[current_block_type_index];
+
+    					if (!if_block0) {
+    						if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    						if_block0.c();
+    					}
+
+    					transition_in(if_block0, 1);
+    					if_block0.m(div, null);
+    				} else {
+    					if_block0 = null;
+    				}
     			}
 
-    			if (/*menuOpen*/ ctx[0]) {
+    			if (/*menuOpen*/ ctx[1]) {
     				if (if_block1) ; else {
     					if_block1 = create_if_block$1(ctx);
     					if_block1.c();
-    					if_block1.m(div, null);
+    					if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
@@ -1620,8 +1673,14 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			if_blocks[current_block_type_index].d();
-    			if (if_block1) if_block1.d();
+
+    			if (~current_block_type_index) {
+    				if_blocks[current_block_type_index].d();
+    			}
+
+    			if (detaching) detach_dev(t);
+    			if (if_block1) if_block1.d(detaching);
+    			if (detaching) detach_dev(if_block1_anchor);
     			mounted = false;
     			dispose();
     		}
@@ -1641,36 +1700,49 @@ var app = (function () {
     function instance$6($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Menu', slots, []);
+    	let { showOnMove } = $$props;
     	let menuOpen = false;
 
     	let MenuToggle = () => {
-    		$$invalidate(0, menuOpen = !menuOpen);
+    		$$invalidate(1, menuOpen = !menuOpen);
+    		$$invalidate(0, showOnMove = true);
     	};
 
-    	const writable_props = [];
+    	const writable_props = ['showOnMove'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Menu> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ MdMenu, MdClose, menuOpen, MenuToggle });
+    	$$self.$$set = $$props => {
+    		if ('showOnMove' in $$props) $$invalidate(0, showOnMove = $$props.showOnMove);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		MdMenu,
+    		MdClose,
+    		showOnMove,
+    		menuOpen,
+    		MenuToggle
+    	});
 
     	$$self.$inject_state = $$props => {
-    		if ('menuOpen' in $$props) $$invalidate(0, menuOpen = $$props.menuOpen);
-    		if ('MenuToggle' in $$props) $$invalidate(1, MenuToggle = $$props.MenuToggle);
+    		if ('showOnMove' in $$props) $$invalidate(0, showOnMove = $$props.showOnMove);
+    		if ('menuOpen' in $$props) $$invalidate(1, menuOpen = $$props.menuOpen);
+    		if ('MenuToggle' in $$props) $$invalidate(2, MenuToggle = $$props.MenuToggle);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [menuOpen, MenuToggle];
+    	return [showOnMove, menuOpen, MenuToggle];
     }
 
     class Menu extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {});
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, { showOnMove: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1678,6 +1750,21 @@ var app = (function () {
     			options,
     			id: create_fragment$6.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*showOnMove*/ ctx[0] === undefined && !('showOnMove' in props)) {
+    			console.warn("<Menu> was created without expected prop 'showOnMove'");
+    		}
+    	}
+
+    	get showOnMove() {
+    		throw new Error("<Menu>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set showOnMove(value) {
+    		throw new Error("<Menu>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -1721,6 +1808,7 @@ var app = (function () {
     	let t;
     	let video_updating = false;
     	let video_animationframe;
+    	let video_is_paused = true;
     	let mounted;
     	let dispose;
 
@@ -1732,7 +1820,7 @@ var app = (function () {
     			video_updating = true;
     		}
 
-    		/*video_timeupdate_handler*/ ctx[4].call(video);
+    		/*video_timeupdate_handler*/ ctx[5].call(video);
     	}
 
     	const block = {
@@ -1740,15 +1828,16 @@ var app = (function () {
     			video = element("video");
     			source = element("source");
     			t = text("\n  Your browser does not support the video tag.");
-    			if (!src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[2].file)) attr_dev(source, "src", source_src_value);
+    			if (!src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[3].file)) attr_dev(source, "src", source_src_value);
     			attr_dev(source, "type", "video/mp4");
-    			add_location(source, file$5, 10, 4, 190);
-    			attr_dev(video, "class", "Scene svelte-bns05s");
-    			attr_dev(video, "id", /*id*/ ctx[3]);
+    			add_location(source, file$5, 11, 4, 231);
+    			attr_dev(video, "class", "Scene svelte-11b3wyi");
+    			attr_dev(video, "id", /*id*/ ctx[4]);
     			video.autoplay = true;
+    			video.controls = true;
     			if (/*ended*/ ctx[1] === void 0 || /*currentTime*/ ctx[0] === void 0) add_render_callback(video_timeupdate_handler);
-    			if (/*ended*/ ctx[1] === void 0) add_render_callback(() => /*video_ended_handler*/ ctx[5].call(video));
-    			add_location(video, file$5, 9, 0, 103);
+    			if (/*ended*/ ctx[1] === void 0) add_render_callback(() => /*video_ended_handler*/ ctx[6].call(video));
+    			add_location(video, file$5, 10, 0, 123);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1761,19 +1850,21 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					listen_dev(video, "timeupdate", video_timeupdate_handler),
-    					listen_dev(video, "ended", /*video_ended_handler*/ ctx[5])
+    					listen_dev(video, "ended", /*video_ended_handler*/ ctx[6]),
+    					listen_dev(video, "play", /*video_play_pause_handler*/ ctx[7]),
+    					listen_dev(video, "pause", /*video_play_pause_handler*/ ctx[7])
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*scene*/ 4 && !src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[2].file)) {
+    			if (dirty & /*scene*/ 8 && !src_url_equal(source.src, source_src_value = "/video/" + /*scene*/ ctx[3].file)) {
     				attr_dev(source, "src", source_src_value);
     			}
 
-    			if (dirty & /*id*/ 8) {
-    				attr_dev(video, "id", /*id*/ ctx[3]);
+    			if (dirty & /*id*/ 16) {
+    				attr_dev(video, "id", /*id*/ ctx[4]);
     			}
 
     			if (!video_updating && dirty & /*currentTime*/ 1 && !isNaN(/*currentTime*/ ctx[0])) {
@@ -1781,6 +1872,10 @@ var app = (function () {
     			}
 
     			video_updating = false;
+
+    			if (dirty & /*paused*/ 4 && video_is_paused !== (video_is_paused = /*paused*/ ctx[2])) {
+    				video[video_is_paused ? "pause" : "play"]();
+    			}
     		},
     		i: noop,
     		o: noop,
@@ -1809,7 +1904,8 @@ var app = (function () {
     	let { scene } = $$props;
     	let { id } = $$props;
     	let { ended } = $$props;
-    	const writable_props = ['currentTime', 'scene', 'id', 'ended'];
+    	let { paused } = $$props;
+    	const writable_props = ['currentTime', 'scene', 'id', 'ended', 'paused'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SceneVideo> was created with unknown prop '${key}'`);
@@ -1827,27 +1923,43 @@ var app = (function () {
     		$$invalidate(1, ended);
     	}
 
+    	function video_play_pause_handler() {
+    		paused = this.paused;
+    		$$invalidate(2, paused);
+    	}
+
     	$$self.$$set = $$props => {
     		if ('currentTime' in $$props) $$invalidate(0, currentTime = $$props.currentTime);
-    		if ('scene' in $$props) $$invalidate(2, scene = $$props.scene);
-    		if ('id' in $$props) $$invalidate(3, id = $$props.id);
+    		if ('scene' in $$props) $$invalidate(3, scene = $$props.scene);
+    		if ('id' in $$props) $$invalidate(4, id = $$props.id);
     		if ('ended' in $$props) $$invalidate(1, ended = $$props.ended);
+    		if ('paused' in $$props) $$invalidate(2, paused = $$props.paused);
     	};
 
-    	$$self.$capture_state = () => ({ currentTime, scene, id, ended });
+    	$$self.$capture_state = () => ({ currentTime, scene, id, ended, paused });
 
     	$$self.$inject_state = $$props => {
     		if ('currentTime' in $$props) $$invalidate(0, currentTime = $$props.currentTime);
-    		if ('scene' in $$props) $$invalidate(2, scene = $$props.scene);
-    		if ('id' in $$props) $$invalidate(3, id = $$props.id);
+    		if ('scene' in $$props) $$invalidate(3, scene = $$props.scene);
+    		if ('id' in $$props) $$invalidate(4, id = $$props.id);
     		if ('ended' in $$props) $$invalidate(1, ended = $$props.ended);
+    		if ('paused' in $$props) $$invalidate(2, paused = $$props.paused);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [currentTime, ended, scene, id, video_timeupdate_handler, video_ended_handler];
+    	return [
+    		currentTime,
+    		ended,
+    		paused,
+    		scene,
+    		id,
+    		video_timeupdate_handler,
+    		video_ended_handler,
+    		video_play_pause_handler
+    	];
     }
 
     class SceneVideo extends SvelteComponentDev {
@@ -1856,9 +1968,10 @@ var app = (function () {
 
     		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
     			currentTime: 0,
-    			scene: 2,
-    			id: 3,
-    			ended: 1
+    			scene: 3,
+    			id: 4,
+    			ended: 1,
+    			paused: 2
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1875,16 +1988,20 @@ var app = (function () {
     			console.warn("<SceneVideo> was created without expected prop 'currentTime'");
     		}
 
-    		if (/*scene*/ ctx[2] === undefined && !('scene' in props)) {
+    		if (/*scene*/ ctx[3] === undefined && !('scene' in props)) {
     			console.warn("<SceneVideo> was created without expected prop 'scene'");
     		}
 
-    		if (/*id*/ ctx[3] === undefined && !('id' in props)) {
+    		if (/*id*/ ctx[4] === undefined && !('id' in props)) {
     			console.warn("<SceneVideo> was created without expected prop 'id'");
     		}
 
     		if (/*ended*/ ctx[1] === undefined && !('ended' in props)) {
     			console.warn("<SceneVideo> was created without expected prop 'ended'");
+    		}
+
+    		if (/*paused*/ ctx[2] === undefined && !('paused' in props)) {
+    			console.warn("<SceneVideo> was created without expected prop 'paused'");
     		}
     	}
 
@@ -1917,6 +2034,14 @@ var app = (function () {
     	}
 
     	set ended(value) {
+    		throw new Error("<SceneVideo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get paused() {
+    		throw new Error("<SceneVideo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set paused(value) {
     		throw new Error("<SceneVideo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -2712,13 +2837,13 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
-    	child_ctx[22] = list;
-    	child_ctx[23] = i;
+    	child_ctx[24] = list[i];
+    	child_ctx[25] = list;
+    	child_ctx[26] = i;
     	return child_ctx;
     }
 
-    // (109:6) {#if showOnMove}
+    // (89:6) {#if showOnMove}
     function create_if_block_3(ctx) {
     	let div;
     	let current_block_type_index;
@@ -2731,8 +2856,6 @@ var app = (function () {
     	let a1;
     	let img1;
     	let img1_src_value;
-    	let t2;
-    	let menu;
     	let div_transition;
     	let current;
     	let mounted;
@@ -2747,7 +2870,6 @@ var app = (function () {
 
     	current_block_type_index = select_block_type(ctx);
     	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	menu = new Menu({ $$inline: true });
 
     	const block = {
     		c: function create() {
@@ -2759,19 +2881,17 @@ var app = (function () {
     			t1 = space();
     			a1 = element("a");
     			img1 = element("img");
-    			t2 = space();
-    			create_component(menu.$$.fragment);
-    			attr_dev(img0, "class", "icon svelte-y5zlyi");
+    			attr_dev(img0, "class", "icon svelte-xzqs56");
     			if (!src_url_equal(img0.src, img0_src_value = "img/back.png")) attr_dev(img0, "src", img0_src_value);
-    			add_location(img0, file, 133, 13, 3952);
-    			attr_dev(a0, "class", "left-button svelte-y5zlyi");
-    			add_location(a0, file, 132, 10, 3895);
-    			attr_dev(img1, "class", "icon svelte-y5zlyi");
+    			add_location(img0, file, 113, 13, 2830);
+    			attr_dev(a0, "class", "left-button svelte-xzqs56");
+    			add_location(a0, file, 112, 10, 2773);
+    			attr_dev(img1, "class", "icon svelte-xzqs56");
     			if (!src_url_equal(img1.src, img1_src_value = "img/next.png")) attr_dev(img1, "src", img1_src_value);
-    			add_location(img1, file, 136, 13, 4078);
-    			attr_dev(a1, "class", "right-button svelte-y5zlyi");
-    			add_location(a1, file, 135, 10, 4017);
-    			add_location(div, file, 109, 8, 3283);
+    			add_location(img1, file, 116, 13, 2956);
+    			attr_dev(a1, "class", "right-button svelte-xzqs56");
+    			add_location(a1, file, 115, 10, 2895);
+    			add_location(div, file, 89, 8, 2161);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2782,14 +2902,12 @@ var app = (function () {
     			append_dev(div, t1);
     			append_dev(div, a1);
     			append_dev(a1, img1);
-    			append_dev(div, t2);
-    			mount_component(menu, div, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(a0, "click", /*sceneBack*/ ctx[8], false, false, false),
-    					listen_dev(a1, "click", /*sceneForward*/ ctx[9], false, false, false)
+    					listen_dev(a0, "click", /*sceneBack*/ ctx[9], false, false, false),
+    					listen_dev(a1, "click", /*sceneForward*/ ctx[10], false, false, false)
     				];
 
     				mounted = true;
@@ -2825,7 +2943,6 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(if_block);
-    			transition_in(menu.$$.fragment, local);
 
     			add_render_callback(() => {
     				if (!div_transition) div_transition = create_bidirectional_transition(div, fade, {}, true);
@@ -2836,7 +2953,6 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			transition_out(if_block);
-    			transition_out(menu.$$.fragment, local);
     			if (!div_transition) div_transition = create_bidirectional_transition(div, fade, {}, false);
     			div_transition.run(0);
     			current = false;
@@ -2844,7 +2960,6 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			if_blocks[current_block_type_index].d();
-    			destroy_component(menu);
     			if (detaching && div_transition) div_transition.end();
     			mounted = false;
     			run_all(dispose);
@@ -2855,14 +2970,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(109:6) {#if showOnMove}",
+    		source: "(89:6) {#if showOnMove}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (122:10) {:else}
+    // (102:10) {:else}
     function create_else_block(ctx) {
     	let div;
     	let mdfullscreenexit;
@@ -2872,15 +2987,15 @@ var app = (function () {
     	mdfullscreenexit = new MdFullscreenExit({ $$inline: true });
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[12](/*onExit*/ ctx[20]);
+    		return /*click_handler_1*/ ctx[13](/*onExit*/ ctx[23]);
     	}
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			create_component(mdfullscreenexit.$$.fragment);
-    			attr_dev(div, "class", "fullscreen-toggle svelte-y5zlyi");
-    			add_location(div, file, 122, 12, 3647);
+    			attr_dev(div, "class", "fullscreen-toggle svelte-xzqs56");
+    			add_location(div, file, 102, 12, 2525);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2916,14 +3031,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(122:10) {:else}",
+    		source: "(102:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:10) {#if !fstoggle}
+    // (91:10) {#if !fstoggle}
     function create_if_block_4(ctx) {
     	let div;
     	let mdfullscreen;
@@ -2933,15 +3048,15 @@ var app = (function () {
     	mdfullscreen = new MdFullscreen({ $$inline: true });
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[11](/*onRequest*/ ctx[19]);
+    		return /*click_handler*/ ctx[12](/*onRequest*/ ctx[22]);
     	}
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			create_component(mdfullscreen.$$.fragment);
-    			attr_dev(div, "class", "fullscreen-toggle svelte-y5zlyi");
-    			add_location(div, file, 111, 12, 3343);
+    			attr_dev(div, "class", "fullscreen-toggle svelte-xzqs56");
+    			add_location(div, file, 91, 12, 2221);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2977,14 +3092,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(111:10) {#if !fstoggle}",
+    		source: "(91:10) {#if !fstoggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:10) {#if currentScene === sceneNumber}
+    // (125:10) {#if currentScene === sceneNumber}
     function create_if_block(ctx) {
     	let div;
     	let t0;
@@ -2992,8 +3107,8 @@ var app = (function () {
     	let div_intro;
     	let div_outro;
     	let current;
-    	let if_block0 = /*scene*/ ctx[21].type == "video" && create_if_block_2(ctx);
-    	let if_block1 = /*scene*/ ctx[21].type == "poster" && create_if_block_1(ctx);
+    	let if_block0 = /*scene*/ ctx[24].type == "video" && create_if_block_2(ctx);
+    	let if_block1 = /*scene*/ ctx[24].type == "poster" && create_if_block_1(ctx);
 
     	const block = {
     		c: function create() {
@@ -3002,7 +3117,7 @@ var app = (function () {
     			t0 = space();
     			if (if_block1) if_block1.c();
     			t1 = space();
-    			add_location(div, file, 146, 14, 4351);
+    			add_location(div, file, 126, 14, 3245);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3012,8 +3127,10 @@ var app = (function () {
     			append_dev(div, t1);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if (/*scene*/ ctx[21].type == "video") {
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+
+    			if (/*scene*/ ctx[24].type == "video") {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
@@ -3036,7 +3153,7 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*scene*/ ctx[21].type == "poster") {
+    			if (/*scene*/ ctx[24].type == "poster") {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
@@ -3066,7 +3183,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
-    				div_intro = create_in_transition(div, fade, {});
+    				div_intro = create_in_transition(div, transitionIn, /*videoList*/ ctx[3][/*sceneNumber*/ ctx[26] - 1]);
     				div_intro.start();
     			});
 
@@ -3076,7 +3193,7 @@ var app = (function () {
     			transition_out(if_block0);
     			transition_out(if_block1);
     			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, fade, { duration: 3000 });
+    			div_outro = create_out_transition(div, transitionOut, /*scene*/ ctx[24]);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -3091,51 +3208,61 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(145:10) {#if currentScene === sceneNumber}",
+    		source: "(125:10) {#if currentScene === sceneNumber}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (148:16) {#if scene.type == "video"}
+    // (128:16) {#if scene.type == "video"}
     function create_if_block_2(ctx) {
     	let scenevideo;
     	let updating_ended;
     	let updating_scene;
     	let updating_currentTime;
+    	let updating_paused;
     	let current;
 
     	function scenevideo_ended_binding(value) {
-    		/*scenevideo_ended_binding*/ ctx[13](value);
+    		/*scenevideo_ended_binding*/ ctx[15](value);
     	}
 
     	function scenevideo_scene_binding(value) {
-    		/*scenevideo_scene_binding*/ ctx[14](value, /*scene*/ ctx[21], /*each_value*/ ctx[22], /*sceneNumber*/ ctx[23]);
+    		/*scenevideo_scene_binding*/ ctx[16](value, /*scene*/ ctx[24], /*each_value*/ ctx[25], /*sceneNumber*/ ctx[26]);
     	}
 
     	function scenevideo_currentTime_binding(value) {
-    		/*scenevideo_currentTime_binding*/ ctx[15](value);
+    		/*scenevideo_currentTime_binding*/ ctx[17](value);
     	}
 
-    	let scenevideo_props = { id: /*sceneNumber*/ ctx[23] };
+    	function scenevideo_paused_binding(value) {
+    		/*scenevideo_paused_binding*/ ctx[18](value);
+    	}
+
+    	let scenevideo_props = { id: /*sceneNumber*/ ctx[26] };
 
     	if (/*ended*/ ctx[2] !== void 0) {
     		scenevideo_props.ended = /*ended*/ ctx[2];
     	}
 
-    	if (/*scene*/ ctx[21] !== void 0) {
-    		scenevideo_props.scene = /*scene*/ ctx[21];
+    	if (/*scene*/ ctx[24] !== void 0) {
+    		scenevideo_props.scene = /*scene*/ ctx[24];
     	}
 
     	if (/*currentTime*/ ctx[1] !== void 0) {
     		scenevideo_props.currentTime = /*currentTime*/ ctx[1];
     	}
 
+    	if (/*paused*/ ctx[8] !== void 0) {
+    		scenevideo_props.paused = /*paused*/ ctx[8];
+    	}
+
     	scenevideo = new SceneVideo({ props: scenevideo_props, $$inline: true });
     	binding_callbacks.push(() => bind(scenevideo, 'ended', scenevideo_ended_binding));
     	binding_callbacks.push(() => bind(scenevideo, 'scene', scenevideo_scene_binding));
     	binding_callbacks.push(() => bind(scenevideo, 'currentTime', scenevideo_currentTime_binding));
+    	binding_callbacks.push(() => bind(scenevideo, 'paused', scenevideo_paused_binding));
 
     	const block = {
     		c: function create() {
@@ -3157,7 +3284,7 @@ var app = (function () {
 
     			if (!updating_scene && dirty & /*videoList*/ 8) {
     				updating_scene = true;
-    				scenevideo_changes.scene = /*scene*/ ctx[21];
+    				scenevideo_changes.scene = /*scene*/ ctx[24];
     				add_flush_callback(() => updating_scene = false);
     			}
 
@@ -3165,6 +3292,12 @@ var app = (function () {
     				updating_currentTime = true;
     				scenevideo_changes.currentTime = /*currentTime*/ ctx[1];
     				add_flush_callback(() => updating_currentTime = false);
+    			}
+
+    			if (!updating_paused && dirty & /*paused*/ 256) {
+    				updating_paused = true;
+    				scenevideo_changes.paused = /*paused*/ ctx[8];
+    				add_flush_callback(() => updating_paused = false);
     			}
 
     			scenevideo.$set(scenevideo_changes);
@@ -3187,14 +3320,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(148:16) {#if scene.type == \\\"video\\\"}",
+    		source: "(128:16) {#if scene.type == \\\"video\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (151:16) {#if scene.type == "poster"}
+    // (131:16) {#if scene.type == "poster"}
     function create_if_block_1(ctx) {
     	let sceneposter;
     	let updating_videoElement;
@@ -3202,21 +3335,21 @@ var app = (function () {
     	let current;
 
     	function sceneposter_videoElement_binding(value) {
-    		/*sceneposter_videoElement_binding*/ ctx[16](value);
+    		/*sceneposter_videoElement_binding*/ ctx[19](value);
     	}
 
     	function sceneposter_scene_binding(value) {
-    		/*sceneposter_scene_binding*/ ctx[17](value, /*scene*/ ctx[21], /*each_value*/ ctx[22], /*sceneNumber*/ ctx[23]);
+    		/*sceneposter_scene_binding*/ ctx[20](value, /*scene*/ ctx[24], /*each_value*/ ctx[25], /*sceneNumber*/ ctx[26]);
     	}
 
-    	let sceneposter_props = { id: /*sceneNumber*/ ctx[23] };
+    	let sceneposter_props = { id: /*sceneNumber*/ ctx[26] };
 
     	if (/*sceneVideo*/ ctx[4] !== void 0) {
     		sceneposter_props.videoElement = /*sceneVideo*/ ctx[4];
     	}
 
-    	if (/*scene*/ ctx[21] !== void 0) {
-    		sceneposter_props.scene = /*scene*/ ctx[21];
+    	if (/*scene*/ ctx[24] !== void 0) {
+    		sceneposter_props.scene = /*scene*/ ctx[24];
     	}
 
     	sceneposter = new ScenePoster({ props: sceneposter_props, $$inline: true });
@@ -3243,7 +3376,7 @@ var app = (function () {
 
     			if (!updating_scene && dirty & /*videoList*/ 8) {
     				updating_scene = true;
-    				sceneposter_changes.scene = /*scene*/ ctx[21];
+    				sceneposter_changes.scene = /*scene*/ ctx[24];
     				add_flush_callback(() => updating_scene = false);
     			}
 
@@ -3267,18 +3400,18 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(151:16) {#if scene.type == \\\"poster\\\"}",
+    		source: "(131:16) {#if scene.type == \\\"poster\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:8) {#each videoList as scene, sceneNumber}
+    // (124:8) {#each videoList as scene, sceneNumber}
     function create_each_block(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[23] && create_if_block(ctx);
+    	let if_block = /*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[26] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -3291,7 +3424,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[23]) {
+    			if (/*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[26]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -3333,20 +3466,36 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(144:8) {#each videoList as scene, sceneNumber}",
+    		source: "(124:8) {#each videoList as scene, sceneNumber}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (107:2) <Fullscreen let:onRequest let:onExit>
+    // (87:2) <Fullscreen let:onRequest let:onExit>
     function create_default_slot(ctx) {
     	let div1;
-    	let t;
+    	let t0;
+    	let menu;
+    	let updating_showOnMove;
+    	let t1;
     	let div0;
     	let current;
     	let if_block = /*showOnMove*/ ctx[6] && create_if_block_3(ctx);
+
+    	function menu_showOnMove_binding(value) {
+    		/*menu_showOnMove_binding*/ ctx[14](value);
+    	}
+
+    	let menu_props = {};
+
+    	if (/*showOnMove*/ ctx[6] !== void 0) {
+    		menu_props.showOnMove = /*showOnMove*/ ctx[6];
+    	}
+
+    	menu = new Menu({ props: menu_props, $$inline: true });
+    	binding_callbacks.push(() => bind(menu, 'showOnMove', menu_showOnMove_binding));
     	let each_value = /*videoList*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -3363,21 +3512,25 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			if (if_block) if_block.c();
-    			t = space();
+    			t0 = space();
+    			create_component(menu.$$.fragment);
+    			t1 = space();
     			div0 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div0, "class", "video-border svelte-y5zlyi");
-    			add_location(div0, file, 142, 6, 4186);
-    			add_location(div1, file, 107, 4, 3246);
+    			attr_dev(div0, "class", "video-border svelte-xzqs56");
+    			add_location(div0, file, 122, 6, 3080);
+    			add_location(div1, file, 87, 4, 2124);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			if (if_block) if_block.m(div1, null);
-    			append_dev(div1, t);
+    			append_dev(div1, t0);
+    			mount_component(menu, div1, null);
+    			append_dev(div1, t1);
     			append_dev(div1, div0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -3398,7 +3551,7 @@ var app = (function () {
     					if_block = create_if_block_3(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(div1, t);
+    					if_block.m(div1, t0);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -3410,7 +3563,17 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (dirty & /*sceneVideo, videoList, ended, currentTime, currentScene*/ 31) {
+    			const menu_changes = {};
+
+    			if (!updating_showOnMove && dirty & /*showOnMove*/ 64) {
+    				updating_showOnMove = true;
+    				menu_changes.showOnMove = /*showOnMove*/ ctx[6];
+    				add_flush_callback(() => updating_showOnMove = false);
+    			}
+
+    			menu.$set(menu_changes);
+
+    			if (dirty & /*videoList, sceneVideo, ended, currentTime, paused, currentScene*/ 287) {
     				each_value = /*videoList*/ ctx[3];
     				validate_each_argument(each_value);
     				let i;
@@ -3441,6 +3604,7 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(if_block);
+    			transition_in(menu.$$.fragment, local);
 
     			for (let i = 0; i < each_value.length; i += 1) {
     				transition_in(each_blocks[i]);
@@ -3450,6 +3614,7 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			transition_out(if_block);
+    			transition_out(menu.$$.fragment, local);
     			each_blocks = each_blocks.filter(Boolean);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -3461,6 +3626,7 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
     			if (if_block) if_block.d();
+    			destroy_component(menu);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -3469,7 +3635,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(107:2) <Fullscreen let:onRequest let:onExit>",
+    		source: "(87:2) <Fullscreen let:onRequest let:onExit>",
     		ctx
     	});
 
@@ -3489,8 +3655,8 @@ var app = (function () {
     				$$slots: {
     					default: [
     						create_default_slot,
-    						({ onRequest, onExit }) => ({ 19: onRequest, 20: onExit }),
-    						({ onRequest, onExit }) => (onRequest ? 524288 : 0) | (onExit ? 1048576 : 0)
+    						({ onRequest, onExit }) => ({ 22: onRequest, 23: onExit }),
+    						({ onRequest, onExit }) => (onRequest ? 4194304 : 0) | (onExit ? 8388608 : 0)
     					]
     				},
     				$$scope: { ctx }
@@ -3503,11 +3669,11 @@ var app = (function () {
     			main = element("main");
     			div = element("div");
     			create_component(fullscreen.$$.fragment);
-    			attr_dev(div, "class", "cursor_black_stamp svelte-y5zlyi");
+    			attr_dev(div, "class", "cursor_black_stamp svelte-xzqs56");
     			toggle_class(div, "cursor_black_stamp", /*currentCursor*/ ctx[7] === "black");
     			toggle_class(div, "cursor_white_stamp", /*currentCursor*/ ctx[7] === "white");
-    			add_location(div, file, 102, 0, 3062);
-    			add_location(main, file, 97, 0, 2997);
+    			add_location(div, file, 82, 0, 1940);
+    			add_location(main, file, 77, 0, 1875);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3520,8 +3686,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(main, "mousemove", /*onMouseMove*/ ctx[10], false, false, false),
-    					listen_dev(main, "click", /*onMouseMove*/ ctx[10], false, false, false)
+    					listen_dev(main, "mousemove", /*onMouseMove*/ ctx[11], false, false, false),
+    					listen_dev(main, "click", /*onMouseMove*/ ctx[11], false, false, false)
     				];
 
     				mounted = true;
@@ -3530,7 +3696,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const fullscreen_changes = {};
 
-    			if (dirty & /*$$scope, videoList, sceneVideo, ended, currentTime, currentScene, onRequest, fstoggle, onExit, showOnMove*/ 18350207) {
+    			if (dirty & /*$$scope, videoList, sceneVideo, ended, currentTime, paused, currentScene, showOnMove, onRequest, fstoggle, onExit*/ 146801023) {
     				fullscreen_changes.$$scope = { dirty, ctx };
     			}
 
@@ -3572,6 +3738,30 @@ var app = (function () {
     	return block;
     }
 
+    function transitionIn(node, scene) {
+    	const opacity = +getComputedStyle(node).opacity;
+    	let delay = scene.transition.delay || 0;
+    	let duration = scene.transition.duration || 400;
+
+    	return {
+    		delay,
+    		duration,
+    		css: t => `opacity: ${t * opacity}`
+    	};
+    }
+
+    function transitionOut(node, scene) {
+    	const opacity = +getComputedStyle(node).opacity;
+    	let delay = scene.transition.delay || 200;
+    	let duration = scene.transition.duration || 400;
+
+    	return {
+    		delay,
+    		duration,
+    		css: t => `opacity: ${t * opacity}`
+    	};
+    }
+
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
@@ -3583,7 +3773,12 @@ var app = (function () {
     	let currentTime = 0;
     	let currentCursor = "";
     	let ended;
+    	let paused;
     	console.log(videoList);
+
+    	onMount(() => {
+    		$$invalidate(8, paused = false);
+    	});
 
     	const sceneBack = () => {
     		if (currentScene > 0) $$invalidate(0, currentScene--, currentScene);
@@ -3624,6 +3819,11 @@ var app = (function () {
     		$$invalidate(5, fstoggle = false);
     	};
 
+    	function menu_showOnMove_binding(value) {
+    		showOnMove = value;
+    		($$invalidate(6, showOnMove), $$invalidate(2, ended));
+    	}
+
     	function scenevideo_ended_binding(value) {
     		ended = value;
     		$$invalidate(2, ended);
@@ -3637,6 +3837,11 @@ var app = (function () {
     	function scenevideo_currentTime_binding(value) {
     		currentTime = value;
     		$$invalidate(1, currentTime);
+    	}
+
+    	function scenevideo_paused_binding(value) {
+    		paused = value;
+    		$$invalidate(8, paused);
     	}
 
     	function sceneposter_videoElement_binding(value) {
@@ -3656,6 +3861,7 @@ var app = (function () {
     		fly,
     		SceneVideo,
     		ScenePoster,
+    		onMount,
     		Fullscreen,
     		MdFullscreen,
     		MdFullscreenExit,
@@ -3668,9 +3874,12 @@ var app = (function () {
     		currentTime,
     		currentCursor,
     		ended,
+    		paused,
     		sceneBack,
     		sceneForward,
-    		onMouseMove
+    		onMouseMove,
+    		transitionIn,
+    		transitionOut
     	});
 
     	$$self.$inject_state = $$props => {
@@ -3682,6 +3891,7 @@ var app = (function () {
     		if ('currentTime' in $$props) $$invalidate(1, currentTime = $$props.currentTime);
     		if ('currentCursor' in $$props) $$invalidate(7, currentCursor = $$props.currentCursor);
     		if ('ended' in $$props) $$invalidate(2, ended = $$props.ended);
+    		if ('paused' in $$props) $$invalidate(8, paused = $$props.paused);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -3711,14 +3921,17 @@ var app = (function () {
     		fstoggle,
     		showOnMove,
     		currentCursor,
+    		paused,
     		sceneBack,
     		sceneForward,
     		onMouseMove,
     		click_handler,
     		click_handler_1,
+    		menu_showOnMove_binding,
     		scenevideo_ended_binding,
     		scenevideo_scene_binding,
     		scenevideo_currentTime_binding,
+    		scenevideo_paused_binding,
     		sceneposter_videoElement_binding,
     		sceneposter_scene_binding
     	];

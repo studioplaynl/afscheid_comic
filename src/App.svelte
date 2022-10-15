@@ -4,7 +4,7 @@
   import { fade, fly } from "svelte/transition";
   import SceneVideo from "./scenes/sceneVideo.svelte";
   import ScenePoster from "./scenes/scenePoster.svelte";
-
+  import {onMount} from 'svelte';
   import Fullscreen from "svelte-fullscreen";
   import MdFullscreen from "svelte-icons/md/MdFullscreen.svelte";
   import MdFullscreenExit from "svelte-icons/md/MdFullscreenExit.svelte";
@@ -17,8 +17,13 @@
   let currentTime = 0;
   let currentCursor = "";
   let ended;
+  let paused;
 
   console.log(videoList);
+
+  onMount(()=>{
+      paused = false
+  })
 
   const sceneBack = () => {
     if (currentScene > 0) currentScene--;
@@ -47,52 +52,27 @@
     currentCursor = "";
   }
 
-  //   setInterval(() => {
-  //     // sceneVideo = document.getElementById('para');
-  //     console.log("showOnMove", showOnMove);
-  //     // console.log("currentScene", currentScene);
-  //     // if (sceneVideo.ended) {
-  //     //   showOnMove = true;
-  //     // }
+  function transitionIn(node, scene) {
+	const opacity = +getComputedStyle(node).opacity;
+    let delay = scene.transition.delay|| 0;
+	let duration = scene.transition.duration ||400;
+	return {
+		delay,
+		duration,
+		css: t => `opacity: ${t * opacity}`
+	};
+}
 
-  //     // if (currentScene == 2 && sceneVideo.currentTime > 4)
-  //     //   currentCursor = "black";
-  //     // else currentCursor = "";
-  //   }, 500);
-
-  //   {#if currentScene == 0}
-  //           <div>
-  //             <Scene1 bind:videoElement={sceneVideo} bind:currentScene />
-  //           </div>
-  //         {:else if currentScene == 1}
-  //           <div out:fly={{ x: 200, duration: 2000 }}>
-  //             <!-- poster scene -->
-  //             <p>test poster</p>
-  //           </div>
-  //         {:else if currentScene == 2}
-  //           <div out:fly={{ x: 200, duration: 2000 }}>
-  //             <Scene2 bind:videoElement={sceneVideo} />
-  //           </div>
-  //         {:else if currentScene == 3}
-  //           <div
-  //             in:fly={{ x: -200, duration: 2000 }}
-  //             out:fade={{ duration: 3000 }}
-  //           >
-  //             <Scene3 bind:videoElement={sceneVideo} />
-  //           </div>
-  //         {:else if currentScene == 4}
-  //           <div in:fade={{ duration: 3000 }}>
-  //             <Scene4 bind:videoElement={sceneVideo} />
-  //           </div>
-  //         {:else if currentScene == 5}
-  //           <div transition:fade>
-  //             <Scene5 bind:videoElement={sceneVideo} />
-  //           </div>
-  //         {:else if currentScene == 6}
-  //           <div transition:fade>
-  //             <Scene6 bind:videoElement={sceneVideo} />
-  //           </div>
-  //         {/if}
+  function transitionOut(node, scene) {
+	const opacity = +getComputedStyle(node).opacity;
+    let delay = scene.transition.delay || 200;
+	let duration = scene.transition.duration || 400;
+	return {
+		delay,
+		duration,
+		css: t => `opacity: ${t * opacity}`
+	};
+}
 </script>
 
 <main
@@ -136,17 +116,17 @@ class:cursor_white_stamp={currentCursor === "white"}
           <a class="right-button" on:click={sceneForward}
             ><img class="icon" src="img/next.png" /></a
           >
-          <Menu />
         </div>
-      {/if}
+        {/if}
+        <Menu bind:showOnMove />
 
       <div class="video-border">
         {#each videoList as scene, sceneNumber}
           {#if currentScene === sceneNumber}
             {#key sceneNumber}
-              <div in:fade out:fade={{ duration: 3000 }}>
+              <div in:transitionIn="{videoList[sceneNumber-1]}" out:transitionOut={scene}>
                 {#if scene.type == "video"}
-                  <SceneVideo bind:ended bind:scene bind:currentTime id={sceneNumber} />
+                  <SceneVideo bind:ended bind:scene bind:currentTime bind:paused id={sceneNumber} />
                 {/if}
                 {#if scene.type == "poster"}
                   <ScenePoster
@@ -177,15 +157,15 @@ class:cursor_white_stamp={currentCursor === "white"}
   .left-button {
     z-index: 10;
     position: fixed;
-    left: 1vw;
-    top: 48%;
+    left: 2vw;
+    bottom: 2vh;
   }
 
   .right-button {
     z-index: 10;
     position: fixed;
-    right: 1vw;
-    top: 48%;
+    right: 2vw;
+    bottom: 2vh;
   }
 
   .cursor_black_stamp {

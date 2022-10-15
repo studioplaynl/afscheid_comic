@@ -79,7 +79,7 @@ video {
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 @font-face {
