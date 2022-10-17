@@ -206,6 +206,7 @@ class:cursor_white_stamp={currentCursor === "white"}
                   <ScenePoster
                     bind:videoElement={sceneVideo}
                     bind:scene
+                    bind:currentScene
                     id={sceneNumber}
                   />
                 {/if}
