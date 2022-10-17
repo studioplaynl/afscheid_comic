@@ -1410,7 +1410,7 @@ var app = (function () {
     		c: function create() {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = "img/menuShoe.png")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-l7ndjc");
+    			attr_dev(img, "class", "svelte-1bws7b1");
     			add_location(img, file$6, 18, 4, 370);
     		},
     		m: function mount(target, anchor) {
@@ -1528,7 +1528,7 @@ var app = (function () {
     			add_location(p6, file$6, 55, 4, 2114);
     			add_location(p7, file$6, 67, 4, 2894);
     			add_location(p8, file$6, 68, 4, 2904);
-    			attr_dev(div, "class", "about svelte-l7ndjc");
+    			attr_dev(div, "class", "about svelte-1bws7b1");
     			add_location(div, file$6, 23, 2, 434);
     		},
     		m: function mount(target, anchor) {
@@ -1598,7 +1598,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
-    			attr_dev(div, "class", "menu-icon svelte-l7ndjc");
+    			attr_dev(div, "class", "menu-icon svelte-1bws7b1");
     			add_location(div, file$6, 14, 0, 263);
     		},
     		l: function claim(nodes) {
@@ -2036,10 +2036,9 @@ var app = (function () {
     	let div;
     	let img0;
     	let img0_src_value;
-    	let t0;
+    	let t;
     	let img1;
     	let img1_src_value;
-    	let t1;
     	let mounted;
     	let dispose;
 
@@ -2047,18 +2046,17 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			img0 = element("img");
-    			t0 = space();
+    			t = space();
     			img1 = element("img");
-    			t1 = text("\n\n\n// geen links/rechts knoppen maar een start knop, zoals eerder gedaan.");
     			if (!src_url_equal(img0.src, img0_src_value = "/img/" + /*scene*/ ctx[1].overlayFile)) attr_dev(img0, "src", img0_src_value);
-    			attr_dev(img0, "class", "overlay svelte-isq2ly");
-    			add_location(img0, file$4, 9, 6, 208);
-    			attr_dev(img1, "class", "next svelte-isq2ly");
+    			attr_dev(img0, "class", "overlay svelte-bbnqt7");
+    			add_location(img0, file$4, 7, 2, 196);
+    			attr_dev(img1, "class", "enterButton svelte-bbnqt7");
     			if (!src_url_equal(img1.src, img1_src_value = "img/skipIntro.png")) attr_dev(img1, "src", img1_src_value);
-    			add_location(img1, file$4, 10, 6, 268);
-    			attr_dev(div, "class", "poster svelte-isq2ly");
+    			add_location(img1, file$4, 8, 2, 253);
+    			attr_dev(div, "class", "poster svelte-bbnqt7");
     			set_style(div, "background", "url('/img/" + /*scene*/ ctx[1].file + "')");
-    			add_location(div, file$4, 7, 4, 71);
+    			add_location(div, file$4, 5, 0, 67);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2066,9 +2064,8 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, img0);
-    			append_dev(div, t0);
+    			append_dev(div, t);
     			append_dev(div, img1);
-    			insert_dev(target, t1, anchor);
 
     			if (!mounted) {
     				dispose = listen_dev(img1, "click", /*click_handler*/ ctx[2], false, false, false);
@@ -2088,7 +2085,6 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			if (detaching) detach_dev(t1);
     			mounted = false;
     			dispose();
     		}

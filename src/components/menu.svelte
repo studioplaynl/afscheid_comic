@@ -86,7 +86,7 @@
     margin: 15px;
     position: absolute;
     right: 0px;
-    z-index: 10;
+    z-index: 14;
     cursor: pointer;
   }
 
@@ -113,10 +113,10 @@
 
   .about {
     background-color: white;
-    z-index: 9;
-    position: fixed;
-    margin: 5vw;
+    z-index: 13;
+    position: absolute;
     padding: 5vw;
-    min-height: 100vw;
+    min-height: 100vh;
+    color: black;
   }
 </style>
