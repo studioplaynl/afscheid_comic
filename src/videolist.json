@@ -1,5 +1,5 @@
 [
-{"type": "poster", "file": "poster.png", "transition": {"type": "fade", "x": "", "duration": ""}},
+{"type": "poster", "file": "poster_bg.png","overlayFile": "poster_overlay.png", "transition": {"type": "fade", "x": "", "duration": ""}},
 {"type": "video", "file": "sc1_sound_1080p_25fps_HQ.m4v", "transition": {"type": "fade", "x": "", "duration": ""}},
 {"type": "video", "file": "sc2_sound_1080p_25fps_HQ.m4v", "transition": {"type": "slide", "x": 200, "duration": 3000}},
 {"type": "video", "file": "sc3_sound_1080p_25fps_HQ.m4v", "transition": {"type": "fade", "x": "", "duration": ""}},

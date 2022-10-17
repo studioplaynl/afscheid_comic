@@ -933,7 +933,7 @@ var app = (function () {
         $inject_state() { }
     }
 
-    var videoList = [{type:"video",file:"sc1_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"poster",file:"poster.png",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.m4v",transition:{type:"slide",x:200,duration:300}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}}];
+    var videoList = [{type:"poster",file:"poster_bg.png",overlayFile:"poster_overlay.png",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc1_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc2_sound_1080p_25fps_HQ.m4v",transition:{type:"slide",x:200,duration:3000}},{type:"video",file:"sc3_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc4_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc5_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc6_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc7_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc8_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc9_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc10_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc11_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc12_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc13_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc14_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc15_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc16_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc17_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc18_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc19_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc20_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc21_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc22_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc23_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc24_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc25_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc26_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}},{type:"video",file:"sc27_sound_1080p_25fps_HQ.m4v",transition:{type:"fade",x:"",duration:""}}];
 
     /* node_modules/svelte-icons/components/IconBase.svelte generated by Svelte v3.49.0 */
 
@@ -2033,31 +2033,64 @@ var app = (function () {
     const file$4 = "src/scenes/scenePoster.svelte";
 
     function create_fragment$4(ctx) {
-    	let img;
-    	let img_src_value;
+    	let div;
+    	let img0;
+    	let img0_src_value;
+    	let t0;
+    	let img1;
+    	let img1_src_value;
+    	let t1;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
-    			img = element("img");
-    			if (!src_url_equal(img.src, img_src_value = "/img/" + /*scene*/ ctx[0].file)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-1cmejey");
-    			add_location(img, file$4, 6, 4, 47);
+    			div = element("div");
+    			img0 = element("img");
+    			t0 = space();
+    			img1 = element("img");
+    			t1 = text("\n\n\n// geen links/rechts knoppen maar een start knop, zoals eerder gedaan.");
+    			if (!src_url_equal(img0.src, img0_src_value = "/img/" + /*scene*/ ctx[1].overlayFile)) attr_dev(img0, "src", img0_src_value);
+    			attr_dev(img0, "class", "overlay svelte-isq2ly");
+    			add_location(img0, file$4, 9, 6, 208);
+    			attr_dev(img1, "class", "next svelte-isq2ly");
+    			if (!src_url_equal(img1.src, img1_src_value = "img/skipIntro.png")) attr_dev(img1, "src", img1_src_value);
+    			add_location(img1, file$4, 10, 6, 268);
+    			attr_dev(div, "class", "poster svelte-isq2ly");
+    			set_style(div, "background", "url('/img/" + /*scene*/ ctx[1].file + "')");
+    			add_location(div, file$4, 7, 4, 71);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, img, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, img0);
+    			append_dev(div, t0);
+    			append_dev(div, img1);
+    			insert_dev(target, t1, anchor);
+
+    			if (!mounted) {
+    				dispose = listen_dev(img1, "click", /*click_handler*/ ctx[2], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*scene*/ 1 && !src_url_equal(img.src, img_src_value = "/img/" + /*scene*/ ctx[0].file)) {
-    				attr_dev(img, "src", img_src_value);
+    			if (dirty & /*scene*/ 2 && !src_url_equal(img0.src, img0_src_value = "/img/" + /*scene*/ ctx[1].overlayFile)) {
+    				attr_dev(img0, "src", img0_src_value);
+    			}
+
+    			if (dirty & /*scene*/ 2) {
+    				set_style(div, "background", "url('/img/" + /*scene*/ ctx[1].file + "')");
     			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(img);
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t1);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -2076,33 +2109,40 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ScenePoster', slots, []);
     	let { scene } = $$props;
-    	const writable_props = ['scene'];
+    	let { currentScene } = $$props;
+    	const writable_props = ['scene', 'currentScene'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<ScenePoster> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$$set = $$props => {
-    		if ('scene' in $$props) $$invalidate(0, scene = $$props.scene);
+    	const click_handler = () => {
+    		$$invalidate(0, currentScene++, currentScene);
     	};
 
-    	$$self.$capture_state = () => ({ scene });
+    	$$self.$$set = $$props => {
+    		if ('scene' in $$props) $$invalidate(1, scene = $$props.scene);
+    		if ('currentScene' in $$props) $$invalidate(0, currentScene = $$props.currentScene);
+    	};
+
+    	$$self.$capture_state = () => ({ scene, currentScene });
 
     	$$self.$inject_state = $$props => {
-    		if ('scene' in $$props) $$invalidate(0, scene = $$props.scene);
+    		if ('scene' in $$props) $$invalidate(1, scene = $$props.scene);
+    		if ('currentScene' in $$props) $$invalidate(0, currentScene = $$props.currentScene);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [scene];
+    	return [currentScene, scene, click_handler];
     }
 
     class ScenePoster extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { scene: 0 });
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, { scene: 1, currentScene: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -2114,8 +2154,12 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*scene*/ ctx[0] === undefined && !('scene' in props)) {
+    		if (/*scene*/ ctx[1] === undefined && !('scene' in props)) {
     			console.warn("<ScenePoster> was created without expected prop 'scene'");
+    		}
+
+    		if (/*currentScene*/ ctx[0] === undefined && !('currentScene' in props)) {
+    			console.warn("<ScenePoster> was created without expected prop 'currentScene'");
     		}
     	}
 
@@ -2124,6 +2168,14 @@ var app = (function () {
     	}
 
     	set scene(value) {
+    		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get currentScene() {
+    		throw new Error("<ScenePoster>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set currentScene(value) {
     		throw new Error("<ScenePoster>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -2766,9 +2818,9 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[24] = list[i];
-    	child_ctx[25] = list;
-    	child_ctx[26] = i;
+    	child_ctx[25] = list[i];
+    	child_ctx[26] = list;
+    	child_ctx[27] = i;
     	return child_ctx;
     }
 
@@ -2916,7 +2968,7 @@ var app = (function () {
     	mdfullscreenexit = new MdFullscreenExit({ $$inline: true });
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[13](/*onExit*/ ctx[23]);
+    		return /*click_handler_1*/ ctx[13](/*onExit*/ ctx[24]);
     	}
 
     	const block = {
@@ -2977,7 +3029,7 @@ var app = (function () {
     	mdfullscreen = new MdFullscreen({ $$inline: true });
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[12](/*onRequest*/ ctx[22]);
+    		return /*click_handler*/ ctx[12](/*onRequest*/ ctx[23]);
     	}
 
     	const block = {
@@ -3036,8 +3088,8 @@ var app = (function () {
     	let div_intro;
     	let div_outro;
     	let current;
-    	let if_block0 = /*scene*/ ctx[24].type == "video" && create_if_block_2(ctx);
-    	let if_block1 = /*scene*/ ctx[24].type == "poster" && create_if_block_1(ctx);
+    	let if_block0 = /*scene*/ ctx[25].type == "video" && create_if_block_2(ctx);
+    	let if_block1 = /*scene*/ ctx[25].type == "poster" && create_if_block_1(ctx);
 
     	const block = {
     		c: function create() {
@@ -3059,7 +3111,7 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (/*scene*/ ctx[24].type == "video") {
+    			if (/*scene*/ ctx[25].type == "video") {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
@@ -3082,7 +3134,7 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*scene*/ ctx[24].type == "poster") {
+    			if (/*scene*/ ctx[25].type == "poster") {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
@@ -3112,7 +3164,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (div_outro) div_outro.end(1);
-    				div_intro = create_in_transition(div, transitionIn, /*videoList*/ ctx[3][/*sceneNumber*/ ctx[26] - 1]);
+    				div_intro = create_in_transition(div, transitionIn, /*videoList*/ ctx[3][/*sceneNumber*/ ctx[27] - 1]);
     				div_intro.start();
     			});
 
@@ -3122,7 +3174,7 @@ var app = (function () {
     			transition_out(if_block0);
     			transition_out(if_block1);
     			if (div_intro) div_intro.invalidate();
-    			div_outro = create_out_transition(div, transitionOut, /*scene*/ ctx[24]);
+    			div_outro = create_out_transition(div, transitionOut, /*scene*/ ctx[25]);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -3158,7 +3210,7 @@ var app = (function () {
     	}
 
     	function scenevideo_scene_binding(value) {
-    		/*scenevideo_scene_binding*/ ctx[16](value, /*scene*/ ctx[24], /*each_value*/ ctx[25], /*sceneNumber*/ ctx[26]);
+    		/*scenevideo_scene_binding*/ ctx[16](value, /*scene*/ ctx[25], /*each_value*/ ctx[26], /*sceneNumber*/ ctx[27]);
     	}
 
     	function scenevideo_currentTime_binding(value) {
@@ -3169,14 +3221,14 @@ var app = (function () {
     		/*scenevideo_paused_binding*/ ctx[18](value);
     	}
 
-    	let scenevideo_props = { id: /*sceneNumber*/ ctx[26] };
+    	let scenevideo_props = { id: /*sceneNumber*/ ctx[27] };
 
     	if (/*ended*/ ctx[2] !== void 0) {
     		scenevideo_props.ended = /*ended*/ ctx[2];
     	}
 
-    	if (/*scene*/ ctx[24] !== void 0) {
-    		scenevideo_props.scene = /*scene*/ ctx[24];
+    	if (/*scene*/ ctx[25] !== void 0) {
+    		scenevideo_props.scene = /*scene*/ ctx[25];
     	}
 
     	if (/*currentTime*/ ctx[1] !== void 0) {
@@ -3213,7 +3265,7 @@ var app = (function () {
 
     			if (!updating_scene && dirty & /*videoList*/ 8) {
     				updating_scene = true;
-    				scenevideo_changes.scene = /*scene*/ ctx[24];
+    				scenevideo_changes.scene = /*scene*/ ctx[25];
     				add_flush_callback(() => updating_scene = false);
     			}
 
@@ -3261,6 +3313,7 @@ var app = (function () {
     	let sceneposter;
     	let updating_videoElement;
     	let updating_scene;
+    	let updating_currentScene;
     	let current;
 
     	function sceneposter_videoElement_binding(value) {
@@ -3268,22 +3321,31 @@ var app = (function () {
     	}
 
     	function sceneposter_scene_binding(value) {
-    		/*sceneposter_scene_binding*/ ctx[20](value, /*scene*/ ctx[24], /*each_value*/ ctx[25], /*sceneNumber*/ ctx[26]);
+    		/*sceneposter_scene_binding*/ ctx[20](value, /*scene*/ ctx[25], /*each_value*/ ctx[26], /*sceneNumber*/ ctx[27]);
     	}
 
-    	let sceneposter_props = { id: /*sceneNumber*/ ctx[26] };
+    	function sceneposter_currentScene_binding(value) {
+    		/*sceneposter_currentScene_binding*/ ctx[21](value);
+    	}
+
+    	let sceneposter_props = { id: /*sceneNumber*/ ctx[27] };
 
     	if (/*sceneVideo*/ ctx[4] !== void 0) {
     		sceneposter_props.videoElement = /*sceneVideo*/ ctx[4];
     	}
 
-    	if (/*scene*/ ctx[24] !== void 0) {
-    		sceneposter_props.scene = /*scene*/ ctx[24];
+    	if (/*scene*/ ctx[25] !== void 0) {
+    		sceneposter_props.scene = /*scene*/ ctx[25];
+    	}
+
+    	if (/*currentScene*/ ctx[0] !== void 0) {
+    		sceneposter_props.currentScene = /*currentScene*/ ctx[0];
     	}
 
     	sceneposter = new ScenePoster({ props: sceneposter_props, $$inline: true });
     	binding_callbacks.push(() => bind(sceneposter, 'videoElement', sceneposter_videoElement_binding));
     	binding_callbacks.push(() => bind(sceneposter, 'scene', sceneposter_scene_binding));
+    	binding_callbacks.push(() => bind(sceneposter, 'currentScene', sceneposter_currentScene_binding));
 
     	const block = {
     		c: function create() {
@@ -3305,8 +3367,14 @@ var app = (function () {
 
     			if (!updating_scene && dirty & /*videoList*/ 8) {
     				updating_scene = true;
-    				sceneposter_changes.scene = /*scene*/ ctx[24];
+    				sceneposter_changes.scene = /*scene*/ ctx[25];
     				add_flush_callback(() => updating_scene = false);
+    			}
+
+    			if (!updating_currentScene && dirty & /*currentScene*/ 1) {
+    				updating_currentScene = true;
+    				sceneposter_changes.currentScene = /*currentScene*/ ctx[0];
+    				add_flush_callback(() => updating_currentScene = false);
     			}
 
     			sceneposter.$set(sceneposter_changes);
@@ -3340,7 +3408,7 @@ var app = (function () {
     function create_each_block(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[26] && create_if_block(ctx);
+    	let if_block = /*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[27] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -3353,7 +3421,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[26]) {
+    			if (/*currentScene*/ ctx[0] === /*sceneNumber*/ ctx[27]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -3502,7 +3570,7 @@ var app = (function () {
 
     			menu.$set(menu_changes);
 
-    			if (dirty & /*videoList, sceneVideo, ended, currentTime, paused, currentScene*/ 287) {
+    			if (dirty & /*videoList, sceneVideo, currentScene, ended, currentTime, paused*/ 287) {
     				each_value = /*videoList*/ ctx[3];
     				validate_each_argument(each_value);
     				let i;
@@ -3584,8 +3652,8 @@ var app = (function () {
     				$$slots: {
     					default: [
     						create_default_slot,
-    						({ onRequest, onExit }) => ({ 22: onRequest, 23: onExit }),
-    						({ onRequest, onExit }) => (onRequest ? 4194304 : 0) | (onExit ? 8388608 : 0)
+    						({ onRequest, onExit }) => ({ 23: onRequest, 24: onExit }),
+    						({ onRequest, onExit }) => (onRequest ? 8388608 : 0) | (onExit ? 16777216 : 0)
     					]
     				},
     				$$scope: { ctx }
@@ -3625,7 +3693,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const fullscreen_changes = {};
 
-    			if (dirty & /*$$scope, videoList, sceneVideo, ended, currentTime, paused, currentScene, showOnMove, onRequest, fstoggle, onExit*/ 146801023) {
+    			if (dirty & /*$$scope, videoList, sceneVideo, currentScene, ended, currentTime, paused, showOnMove, onRequest, fstoggle, onExit*/ 293601663) {
     				fullscreen_changes.$$scope = { dirty, ctx };
     			}
 
@@ -3853,6 +3921,11 @@ var app = (function () {
     		$$invalidate(3, videoList);
     	}
 
+    	function sceneposter_currentScene_binding(value) {
+    		currentScene = value;
+    		$$invalidate(0, currentScene);
+    	}
+
     	$$self.$capture_state = () => ({
     		videoList,
     		Menu,
@@ -3931,7 +4004,8 @@ var app = (function () {
     		scenevideo_currentTime_binding,
     		scenevideo_paused_binding,
     		sceneposter_videoElement_binding,
-    		sceneposter_scene_binding
+    		sceneposter_scene_binding,
+    		sceneposter_currentScene_binding
     	];
     }
 
