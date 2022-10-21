@@ -3,8 +3,7 @@
   export let currentScene;
 </script>
 
-<div class="poster" style="background: url('/img/{scene.file}');">
-  <!-- <img src="/img/{scene.file}" class="background"> -->
+<div class="poster">
   <img src="/img/{scene.overlayFile}" class="overlay" />
   <img
     on:click={() => {
@@ -19,24 +18,26 @@
 <style>
   .poster {
     background-color: black;
-    z-index: 12;
+    z-index: 11;
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
+    min-width: 100%; 
+    min-height: 100%; 
+    background-image: url("/img/poster_bg.png");
+    height: 100%;
 
-  .background {
-    z-index: 11;
-    max-height: 100vh;
-    max-width: 100vw;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .overlay {
     z-index: 12;
     max-height: 100vh;
     max-width: 100vw;
+
     /* position: relative; */
     margin: 0 auto;
     position: absolute;
