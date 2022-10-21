@@ -10,7 +10,7 @@
       currentScene++;
     }}
     class="enterButton"
-    src="img/skipIntro.png"
+    src="img/skipIntro2.png"
   />
 </div>
 

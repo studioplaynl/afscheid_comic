@@ -185,10 +185,10 @@ class:cursor_white_stamp={currentCursor === "white"}
             </div>
           {/if}
           <a class="left-button" on:click={sceneBack}
-            ><img class="icon" src="img/back.png" /></a
+            ><img class="icon" src="img/back2.png" /></a
           >
           <a class="right-button" on:click={sceneForward}
-            ><img class="icon" src="img/next.png" /></a
+            ><img class="icon" src="img/next2.png" /></a
           >
         </div>
         {/if}
