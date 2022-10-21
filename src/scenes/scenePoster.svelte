@@ -47,6 +47,8 @@
     left: 50vw;
   }
 
+
+
   .enterButton {
     z-index: 12;
     position: absolute;
@@ -54,7 +56,24 @@
     left: 50vw;
     width: 70pt;
     transform: translateX(-25%) translateY(-25%);
+
+    -webkit-animation: bounce 4s infinite ease-in-out;
+    -o-animation: bounce 4s infinite ease-in-out;
+    -ms-animation: bounce 4s infinite ease-in-out; 
+    -moz-animation: bounce 4s infinite ease-in-out; 
+    animation: bounce 4s infinite ease-in-out;
   }
+@-webkit-keyframes bounce {
+    0% { transform: translateY(-25px)  }
+    50% { transform: translateY(25px) }
+    100% { transform: translateY(-25px) }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(-25px)  }
+    50% { transform: translateY(25px) }
+    100% { transform: translateY(-25px) }
+}
 
   .enterButton:hover {
     width: 80pt;
