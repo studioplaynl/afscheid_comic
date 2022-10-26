@@ -1,5 +1,6 @@
 <script>
-  import videoList from "./videolist.json";
+  // import videoList from "./videolist.json";
+  import videoList from "./videolist.json"
   import Menu from "./components/menu.svelte";
   import { fade } from "svelte/transition";
   import SceneVideo from "./scenes/sceneVideo.svelte";
@@ -8,7 +9,8 @@
   import Fullscreen from "svelte-fullscreen";
   import MdFullscreen from "svelte-icons/md/MdFullscreen.svelte";
   import MdFullscreenExit from "svelte-icons/md/MdFullscreenExit.svelte";
-  import { each } from "svelte/internal";
+ import { cubicInOut,  linear, cubicIn, quadInOut, quadIn, quadOut} from 'svelte/easing';
+
   let sceneVideo;
   let fstoggle = false;
   let showOnMove = false;
@@ -19,7 +21,10 @@
   let ended;
   let paused;
 
-  console.log(videoList);
+  // console.log(videoList);
+
+//  {"type": "poster", "file": "poster.png", "transition": {"type": "fade", "x": "", "delay": "100", "duration": "4000"}, "transitionIn": {"type": "fade", "x": "", "duration": "10000"}, "transitionOut": {"type": "fade", "x": "", "duration": "10000"} },
+
 
   onMount(()=>{
       paused = false
@@ -52,96 +57,109 @@
     currentCursor = "";
   }
 
-  function transitionIn(node, scene) {
-    if(scene === undefined) return;
+function transitionIn(node, scene) {
+  console.log("scene IN", scene)
+if(scene === undefined) return;
 
 const style = getComputedStyle(node);
+//console.log("style", style)
 const opacity = +style.opacity;
 const transform = style.transform === 'none' ? '' : style.transform;
 
+
+const width = parseFloat(style.width);
+//console.log("width", width)
+//console.log("transform", transform)
+
 let delay = scene.transition.delay || 0;
-let duration = scene.transition.duration || 400;
+let duration = scene.transition.duration * 1.2|| 2000;
+console.log("transition IN", scene.transition.type, duration)
 let x = ~scene.transition.x || 0
 let y = ~scene.transition.y || 0
+
 if(scene.transition.type === 'fade') {
     return {
     delay,
     duration,
-    css: t => `opacity: ${t * opacity}`
+    css: t => `transform: ${transform} translate(${ -50}${'%'}, ${0}${'%'});opacity: ${t * opacity}`
 };
 }
+
 if(scene.transition.type === 'slide') {
-    console.log('slide out')
+    console.log('slide')
 
-    let xValue = x;
-    let xUnit = 'px'
-    if (typeof x === 'string') {
-        const xMatch = x.match(/([-\d.]+)(\D+)/);
-        xValue = Number(xMatch[1]);
-        xUnit = xMatch[2];
-    }
+    let xValue = 100;
+    let xUnit = '%'
+    
 
-    let yValue = y;
-    let yUnit = 'px'
-    if (typeof y === 'string') {
-        const yMatch = y.match(/([-\d.]+)(\D+)/);
-        yValue = Number(yMatch[1]);
-        yUnit = yMatch[2];
-    }
+    let yValue = 0;
+    let yUnit = '%'
+    
+ console.log("yValue, xValue",yValue, xValue)
 
     return {
         delay,
         duration,
-        css: (t, u) => `
-            transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
+        
+        css: (t) => {
+          const eased = linear(t);
+          return `transform: ${transform} translate(${ -50}${'%'}, ${0}${'%'});transform: ${transform} translate(${ (1 - eased) * xValue}${xUnit}, ${(1 - eased) * yValue}${yUnit});`
+        }
     };
+  
 }
+//        transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
+         //             translateX(${u * 100}%);`
+   
 
 }
 
-  function transitionOut(node, scene) {
+  function transitionOut(node) {
+    let scene = videoList[currentScene-1]
     if(scene === undefined) return;
-
+    
+    console.log("scene OUT", scene)
+    scene = videoList[currentScene]
+    
     const style = getComputedStyle(node);
-	const opacity = +style.opacity;
+	  const opacity = +style.opacity;
     const transform = style.transform === 'none' ? '' : style.transform;
 
     let delay = scene.transition.delay || 0;
-	let duration = scene.transition.duration || 400;
+	  let duration = scene.transition.duration || 400;
+
+    console.log("transition OUT", scene.transition.type, duration)
+
     let x = scene.transition.x || 0
     let y = scene.transition.y || 0
     if(scene.transition.type === 'fade') {
         return {
 		delay,
 		duration,
-		css: t => `opacity: ${t * opacity}`
+		css: t => `transform: ${transform} translate(${ 50}${'%'}, ${0}${'%'});opacity: ${t * opacity}`
 	};
     }
     if(scene.transition.type === 'slide') {
-        console.log('slide out')
+        
+        console.log('element', videoList[currentScene-1].file)
 	
-		let xValue = x;
-		let xUnit = 'px'
-		if (typeof x === 'string') {
-			const xMatch = x.match(/([-\d.]+)(\D+)/);
-			xValue = Number(xMatch[1]);
-			xUnit = xMatch[2];
-		}
+		let xValue = 50;
+		let xUnit = '%'
+
 	
-		let yValue = y;
-		let yUnit = 'px'
-		if (typeof y === 'string') {
-			const yMatch = y.match(/([-\d.]+)(\D+)/);
-			yValue = Number(yMatch[1]);
-			yUnit = yMatch[2];
-		}
+		let yValue = 0;
+		let yUnit = '%'
+		
 	
-		return {
-			delay,
-			duration,
-			css: (t, u) => `
-				transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});`
-		};
+		    return {
+        delay,
+        duration,
+        
+        css: t => {
+          const eased = linear(t);
+          return `transform: ${transform} translate(${ -50}${'%'}, ${0}${'%'});transform: ${transform} translate(${ eased * xValue}${xUnit}, ${eased * yValue}${yUnit});`
+        }
+    };
     }
 	
 }
@@ -198,7 +216,7 @@ class:cursor_white_stamp={currentCursor === "white"}
         {#each videoList as scene, sceneNumber}
           {#if currentScene === sceneNumber}
             {#key sceneNumber}
-              <div in:transitionIn="{videoList[sceneNumber-1]}" out:transitionOut={scene}>
+              <div in:transitionIn="{videoList[currentScene]}" out:transitionOut="{videoList[currentScene-1]}">
                 {#if scene.type == "video"}
                   <SceneVideo bind:ended bind:scene bind:currentTime bind:paused id={sceneNumber} />
                 {/if}

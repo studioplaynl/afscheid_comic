@@ -19,7 +19,7 @@
   .poster {
     background-color: black;
     z-index: 11;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     min-width: 100%; 
@@ -50,6 +50,7 @@
 
 
   .enterButton {
+    cursor: pointer;
     z-index: 12;
     position: absolute;
     top: 75vh;
